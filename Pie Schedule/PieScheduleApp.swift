@@ -1,17 +1,19 @@
 //
-//  Pie_ScheduleApp.swift
+//  PieScheduleApp.swift
 //  Pie Schedule
 //
 //  Created by Krystian Postek on 21/02/2022.
 //
 
+import RealmSwift
 import SwiftUI
 
 @main
-struct Pie_ScheduleApp: App {
+struct PieScheduleApp: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.realmConfiguration, Realm.Configuration(deleteRealmIfMigrationNeeded: true))
         }
     }
 }

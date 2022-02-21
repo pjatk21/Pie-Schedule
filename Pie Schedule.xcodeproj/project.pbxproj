@@ -7,18 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6142E72E27C404B2008C357C /* Pie_ScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72D27C404B2008C357C /* Pie_ScheduleApp.swift */; };
+		6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72D27C404B2008C357C /* PieScheduleApp.swift */; };
 		6142E73027C404B2008C357C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72F27C404B2008C357C /* ContentView.swift */; };
 		6142E73227C404B3008C357C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6142E73127C404B3008C357C /* Assets.xcassets */; };
 		6142E73527C404B3008C357C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6142E73427C404B3008C357C /* Preview Assets.xcassets */; };
+		6142E73F27C4058D008C357C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E73E27C4058D008C357C /* Group.swift */; };
+		6142E74227C40760008C357C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 6142E74127C40760008C357C /* Realm */; };
+		6142E74427C40760008C357C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6142E74327C40760008C357C /* RealmSwift */; };
+		6142E74627C40966008C357C /* ScheduleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E74527C40966008C357C /* ScheduleEntry.swift */; };
+		6142E74927C40C82008C357C /* ScheduleEntryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */; };
+		61A7390A27C4333200B1D4F5 /* AltapiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A7390927C4333200B1D4F5 /* AltapiManager.swift */; };
+		61A7391727C447F700B1D4F5 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 61A7391627C447F700B1D4F5 /* SwiftDate */; };
+		61A7391927C447F700B1D4F5 /* SwiftDateStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 61A7391827C447F700B1D4F5 /* SwiftDateStatic */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		61A7391527C4479200B1D4F5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6142E72A27C404B2008C357C /* Pie Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pie Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6142E72D27C404B2008C357C /* Pie_ScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie_ScheduleApp.swift; sourceTree = "<group>"; };
+		6142E72D27C404B2008C357C /* PieScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieScheduleApp.swift; sourceTree = "<group>"; };
 		6142E72F27C404B2008C357C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6142E73127C404B3008C357C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6142E73427C404B3008C357C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6142E73C27C404EF008C357C /* realm-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "realm-swift"; path = "../realm-swift"; sourceTree = "<group>"; };
+		6142E73E27C4058D008C357C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		6142E74527C40966008C357C /* ScheduleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntry.swift; sourceTree = "<group>"; };
+		6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntryResponse.swift; sourceTree = "<group>"; };
+		61A7390927C4333200B1D4F5 /* AltapiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltapiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +52,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6142E74427C40760008C357C /* RealmSwift in Frameworks */,
+				6142E74227C40760008C357C /* Realm in Frameworks */,
+				61A7391927C447F700B1D4F5 /* SwiftDateStatic in Frameworks */,
+				61A7391727C447F700B1D4F5 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +65,10 @@
 		6142E72127C404B2008C357C = {
 			isa = PBXGroup;
 			children = (
+				6142E73B27C404EF008C357C /* Packages */,
 				6142E72C27C404B2008C357C /* Pie Schedule */,
 				6142E72B27C404B2008C357C /* Products */,
+				6142E74027C40760008C357C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +83,11 @@
 		6142E72C27C404B2008C357C /* Pie Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				6142E72D27C404B2008C357C /* Pie_ScheduleApp.swift */,
+				6142E74727C40C65008C357C /* Altapi responses */,
+				6142E73D27C40573008C357C /* Objects */,
+				6142E72D27C404B2008C357C /* PieScheduleApp.swift */,
 				6142E72F27C404B2008C357C /* ContentView.swift */,
+				61A7390927C4333200B1D4F5 /* AltapiManager.swift */,
 				6142E73127C404B3008C357C /* Assets.xcassets */,
 				6142E73327C404B3008C357C /* Preview Content */,
 			);
@@ -67,6 +102,38 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6142E73B27C404EF008C357C /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				6142E73C27C404EF008C357C /* realm-swift */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		6142E73D27C40573008C357C /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				6142E73E27C4058D008C357C /* Group.swift */,
+				6142E74527C40966008C357C /* ScheduleEntry.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		6142E74027C40760008C357C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6142E74727C40C65008C357C /* Altapi responses */ = {
+			isa = PBXGroup;
+			children = (
+				6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */,
+			);
+			path = "Altapi responses";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +144,19 @@
 				6142E72627C404B2008C357C /* Sources */,
 				6142E72727C404B2008C357C /* Frameworks */,
 				6142E72827C404B2008C357C /* Resources */,
+				61A7391527C4479200B1D4F5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Pie Schedule";
+			packageProductDependencies = (
+				6142E74127C40760008C357C /* Realm */,
+				6142E74327C40760008C357C /* RealmSwift */,
+				61A7391627C447F700B1D4F5 /* SwiftDate */,
+				61A7391827C447F700B1D4F5 /* SwiftDateStatic */,
+			);
 			productName = "Pie Schedule";
 			productReference = 6142E72A27C404B2008C357C /* Pie Schedule.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +185,9 @@
 				Base,
 			);
 			mainGroup = 6142E72127C404B2008C357C;
+			packageReferences = (
+				61A7390B27C4464A00B1D4F5 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+			);
 			productRefGroup = 6142E72B27C404B2008C357C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +214,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A7390A27C4333200B1D4F5 /* AltapiManager.swift in Sources */,
+				6142E73F27C4058D008C357C /* Group.swift in Sources */,
+				6142E74627C40966008C357C /* ScheduleEntry.swift in Sources */,
+				6142E74927C40C82008C357C /* ScheduleEntryResponse.swift in Sources */,
 				6142E73027C404B2008C357C /* ContentView.swift in Sources */,
-				6142E72E27C404B2008C357C /* Pie_ScheduleApp.swift in Sources */,
+				6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,12 +358,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "prov.kpostek.Pie-Schedule";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = prov.kpostek.pieschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -306,12 +388,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "prov.kpostek.Pie-Schedule";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = prov.kpostek.pieschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,6 +424,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61A7390B27C4464A00B1D4F5 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6142E74127C40760008C357C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Realm;
+		};
+		6142E74327C40760008C357C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealmSwift;
+		};
+		61A7391627C447F700B1D4F5 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61A7390B27C4464A00B1D4F5 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		61A7391827C447F700B1D4F5 /* SwiftDateStatic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61A7390B27C4464A00B1D4F5 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDateStatic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6142E72227C404B2008C357C /* Project object */;
 }
