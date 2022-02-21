@@ -13,11 +13,11 @@ class AltapiManager {
     private let baseUrl = URL(string: "https://altapi.kpostek.dev/")!
     
     func getEntries(for dateString: String) async throws -> ScheduleEntryResponse? {
-        let url = baseUrl.appendingPathComponent("public/timetable/2022-03-07")
+        let url = baseUrl.appendingPathComponent("public/timetable/\(dateString)")
         var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         urlComp.queryItems = [
             URLQueryItem(name: "groups", value: "WIs I.2 - 46c"),
-            URLQueryItem(name: "groups", value: "WIs I.2 - 11c")
+            URLQueryItem(name: "groups", value: "WIs I.2 - 1w")
         ]
         guard let urlFinal = urlComp.url else { return nil }
         print(urlFinal)

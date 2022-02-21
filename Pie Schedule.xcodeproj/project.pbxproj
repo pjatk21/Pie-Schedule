@@ -45,6 +45,7 @@
 		6142E74527C40966008C357C /* ScheduleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntry.swift; sourceTree = "<group>"; };
 		6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntryResponse.swift; sourceTree = "<group>"; };
 		61A7390927C4333200B1D4F5 /* AltapiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltapiManager.swift; sourceTree = "<group>"; };
+		61A7391A27C44E4800B1D4F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 				61A7390927C4333200B1D4F5 /* AltapiManager.swift */,
 				6142E73127C404B3008C357C /* Assets.xcassets */,
 				6142E73327C404B3008C357C /* Preview Content */,
+				61A7391A27C44E4800B1D4F5 /* README.md */,
 			);
 			path = "Pie Schedule";
 			sourceTree = "<group>";
