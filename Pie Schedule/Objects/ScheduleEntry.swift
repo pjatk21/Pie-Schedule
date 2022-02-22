@@ -30,7 +30,7 @@ class ScheduleEntry: Object, Codable, Identifiable {
     }
     
     private enum CodingKeys: String, CodingKey {
-        case begin, end, dateString, code, name, room, tutor
+        case begin, end, dateString, code, type, name, room, tutor
     }
 }
 

@@ -16,7 +16,10 @@ struct EntryPreviewRow: View {
         VStack(alignment: .leading) {
             Text(entry.code ?? "Nieokreślono")
                 .font(.system(size: 24, weight: .bold, design: .rounded))
-            Text((entry.name ?? "Nieokreślono") + (entry.type ?? ""))
+            Text((entry.name ?? "Nieokreślono"))
+                .font(.system(size: 12))
+                .italic()
+            Text((entry.type ?? "Nieokreślono"))
                 .font(.system(size: 12))
                 .italic()
             HStack {
