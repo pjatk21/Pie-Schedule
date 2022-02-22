@@ -45,14 +45,7 @@ struct ContentView: View {
                     EntryPreviewRow(entry: entry)
                 }
                 .refreshable {
-                    let r = try! await altapi.getEntries(for: activeDate)
-                    let outdated = realm.objects(ScheduleEntry.self).where {
-                        $0.dateString == activeDate.toFormat("yyyy-MM-dd")
-                    }
-                    try! realm.write {
-                        realm.delete(outdated)
-                        realm.add(r!.entries)
-                    }
+                    let _ = try! await altapi.updateEntries(for: activeDate)
                 }
             }
             .navigationTitle("Plan zajęć")

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		611B6D5D27C4D2F600A143AB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5C27C4D2F600A143AB /* Settings.swift */; };
 		611B6D5F27C4D32200A143AB /* EntryPreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */; };
-		611B6D6127C4E21400A143AB /* EntriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D6027C4E21400A143AB /* EntriesList.swift */; };
 		6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72D27C404B2008C357C /* PieScheduleApp.swift */; };
 		6142E73027C404B2008C357C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72F27C404B2008C357C /* ContentView.swift */; };
 		6142E73227C404B3008C357C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6142E73127C404B3008C357C /* Assets.xcassets */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		611B6D5C27C4D2F600A143AB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPreviewRow.swift; sourceTree = "<group>"; };
-		611B6D6027C4E21400A143AB /* EntriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesList.swift; sourceTree = "<group>"; };
 		6142E72A27C404B2008C357C /* Pie Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pie Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6142E72D27C404B2008C357C /* PieScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieScheduleApp.swift; sourceTree = "<group>"; };
 		6142E72F27C404B2008C357C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			children = (
 				611B6D5C27C4D2F600A143AB /* Settings.swift */,
 				611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */,
-				611B6D6027C4E21400A143AB /* EntriesList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,7 +237,6 @@
 				611B6D5F27C4D32200A143AB /* EntryPreviewRow.swift in Sources */,
 				611B6D5D27C4D2F600A143AB /* Settings.swift in Sources */,
 				6142E73027C404B2008C357C /* ContentView.swift in Sources */,
-				611B6D6127C4E21400A143AB /* EntriesList.swift in Sources */,
 				6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

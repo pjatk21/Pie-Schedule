@@ -10,7 +10,7 @@ import RealmSwift
 import SwiftDate
 
 class ScheduleEntry: Object, Codable, Identifiable {
-    // @Persisted(primaryKey: true) var _id: ObjectId = ObjectId()
+    @Persisted(primaryKey: true) var _id: ObjectId = ObjectId.generate()
     @Persisted var begin: String
     @Persisted var end: String
     @Persisted var dateString: String
@@ -19,19 +19,19 @@ class ScheduleEntry: Object, Codable, Identifiable {
     @Persisted var name: String?
     @Persisted var room: String?
     @Persisted var tutor: String?
-    @Persisted var groups: RealmSwift.List<ScheduleGroup>
+    // @Persisted var groups: RealmSwift.List<ScheduleGroup>
     
     var id: String {
-        UUID().uuidString
+        _id.stringValue
     }
     
     var beginDate: Date {
         begin.toISODate(region: .local)!.date
     }
     
-    /* private enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case begin, end, dateString, code, name, room, tutor
-    } */
+    }
 }
 
 extension ScheduleEntry {
