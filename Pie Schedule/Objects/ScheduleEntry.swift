@@ -19,6 +19,7 @@ class ScheduleEntry: Object, Codable, Identifiable {
     @Persisted var name: String?
     @Persisted var room: String?
     @Persisted var tutor: String?
+    @Persisted var groups: RealmSwift.List<ScheduleGroup>
     
     var id: String {
         UUID().uuidString

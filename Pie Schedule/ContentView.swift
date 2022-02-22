@@ -5,17 +5,17 @@
 //  Created by Krystian Postek on 21/02/2022.
 //
 
-import SwiftUI
 import RealmSwift
 import SwiftDate
+import SwiftUI
 
 struct ContentView: View {
     private let altapi = AltapiManager()
-    
+
     @ObservedResults(ScheduleEntry.self) var entries
     @Environment(\.realm) var realm: Realm
-    @State var activeDate = Date()
-    
+    @State var activeDate = Date().dateBySet(hour: 0, min: 0, secs: 0)!
+
     var body: some View {
         NavigationView {
             VStack {
@@ -29,8 +29,8 @@ struct ContentView: View {
                             .frame(width: 10)
                             .padding(.horizontal, 25.0)
                     }
-                    Text(activeDate.formatted(date: .abbreviated, time: .omitted))
-                        .frame(maxWidth: .infinity)
+                    DatePicker("Date", selection: $activeDate, displayedComponents: [.date])
+                        .datePickerStyle(DefaultDatePickerStyle())
                     Button {
                         activeDate = activeDate + 1.days
                     } label: {
@@ -41,37 +41,41 @@ struct ContentView: View {
                             .padding(.horizontal, 25.0)
                     }
                 }
-                List(entries) { entry in
-                    VStack(alignment: .leading) {
-                        Text(entry.code ?? "Nieokreślono")
-                            .font(.system(size: 24, weight: .bold, design: .rounded))
-                        Text((entry.name ?? "Nieokreślono") + (entry.type ?? ""))
-                            .font(.system(size: 12))
-                            .italic()
-                        HStack {
-                            Text(entry.beginDate.formatted(date: .omitted, time: .shortened))
-                            Text(entry.room ?? "Brak sali")
-                        }
-                        
-                    }
+                List(entriesActive()) { entry in
+                    EntryPreviewRow(entry: entry)
                 }
                 .refreshable {
-                    let r = try! await altapi.getEntries(for: activeDate.toFormat("yyyy-MM-dd"))
+                    let r = try! await altapi.getEntries(for: activeDate)
+                    let outdated = realm.objects(ScheduleEntry.self).where {
+                        $0.dateString == activeDate.toFormat("yyyy-MM-dd")
+                    }
                     try! realm.write {
-                        realm.deleteAll()
+                        realm.delete(outdated)
                         realm.add(r!.entries)
                     }
                 }
             }
             .navigationTitle("Plan zajęć")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: Settings()) {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                }
+            }
         }
+    }
+
+    func entriesActive() -> Results<ScheduleEntry> {
+        entries.where { $0.dateString == activeDate.toFormat("yyyy-MM-dd") }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleEntry.preloadPreview()
-        return ContentView()
+        return ContentView(activeDate: Date(year: 2022, month: 3, day: 7, hour: 0, minute: 0))
             .environment(\.realmConfiguration, Realm.Configuration(deleteRealmIfMigrationNeeded: true))
     }
 }

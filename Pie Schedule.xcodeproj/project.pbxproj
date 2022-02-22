@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611B6D5D27C4D2F600A143AB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5C27C4D2F600A143AB /* Settings.swift */; };
+		611B6D5F27C4D32200A143AB /* EntryPreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */; };
+		611B6D6127C4E21400A143AB /* EntriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D6027C4E21400A143AB /* EntriesList.swift */; };
 		6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72D27C404B2008C357C /* PieScheduleApp.swift */; };
 		6142E73027C404B2008C357C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72F27C404B2008C357C /* ContentView.swift */; };
 		6142E73227C404B3008C357C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6142E73127C404B3008C357C /* Assets.xcassets */; };
 		6142E73527C404B3008C357C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6142E73427C404B3008C357C /* Preview Assets.xcassets */; };
-		6142E73F27C4058D008C357C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E73E27C4058D008C357C /* Group.swift */; };
+		6142E73F27C4058D008C357C /* ScheduleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E73E27C4058D008C357C /* ScheduleGroup.swift */; };
 		6142E74227C40760008C357C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 6142E74127C40760008C357C /* Realm */; };
 		6142E74427C40760008C357C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6142E74327C40760008C357C /* RealmSwift */; };
 		6142E74627C40966008C357C /* ScheduleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E74527C40966008C357C /* ScheduleEntry.swift */; };
@@ -35,13 +38,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		611B6D5C27C4D2F600A143AB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPreviewRow.swift; sourceTree = "<group>"; };
+		611B6D6027C4E21400A143AB /* EntriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesList.swift; sourceTree = "<group>"; };
 		6142E72A27C404B2008C357C /* Pie Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pie Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6142E72D27C404B2008C357C /* PieScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieScheduleApp.swift; sourceTree = "<group>"; };
 		6142E72F27C404B2008C357C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6142E73127C404B3008C357C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6142E73427C404B3008C357C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6142E73C27C404EF008C357C /* realm-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "realm-swift"; path = "../realm-swift"; sourceTree = "<group>"; };
-		6142E73E27C4058D008C357C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		6142E73E27C4058D008C357C /* ScheduleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGroup.swift; sourceTree = "<group>"; };
 		6142E74527C40966008C357C /* ScheduleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntry.swift; sourceTree = "<group>"; };
 		6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntryResponse.swift; sourceTree = "<group>"; };
 		61A7390927C4333200B1D4F5 /* AltapiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltapiManager.swift; sourceTree = "<group>"; };
@@ -63,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		611B6D5B27C4D2ED00A143AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				611B6D5C27C4D2F600A143AB /* Settings.swift */,
+				611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */,
+				611B6D6027C4E21400A143AB /* EntriesList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6142E72127C404B2008C357C = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +100,7 @@
 		6142E72C27C404B2008C357C /* Pie Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				611B6D5B27C4D2ED00A143AB /* Views */,
 				6142E74727C40C65008C357C /* Altapi responses */,
 				6142E73D27C40573008C357C /* Objects */,
 				6142E72D27C404B2008C357C /* PieScheduleApp.swift */,
@@ -115,7 +132,7 @@
 		6142E73D27C40573008C357C /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				6142E73E27C4058D008C357C /* Group.swift */,
+				6142E73E27C4058D008C357C /* ScheduleGroup.swift */,
 				6142E74527C40966008C357C /* ScheduleEntry.swift */,
 			);
 			path = Objects;
@@ -217,10 +234,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				61A7390A27C4333200B1D4F5 /* AltapiManager.swift in Sources */,
-				6142E73F27C4058D008C357C /* Group.swift in Sources */,
+				6142E73F27C4058D008C357C /* ScheduleGroup.swift in Sources */,
 				6142E74627C40966008C357C /* ScheduleEntry.swift in Sources */,
 				6142E74927C40C82008C357C /* ScheduleEntryResponse.swift in Sources */,
+				611B6D5F27C4D32200A143AB /* EntryPreviewRow.swift in Sources */,
+				611B6D5D27C4D2F600A143AB /* Settings.swift in Sources */,
 				6142E73027C404B2008C357C /* ContentView.swift in Sources */,
+				611B6D6127C4E21400A143AB /* EntriesList.swift in Sources */,
 				6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pie Schedule/Preview Content\"";
@@ -368,6 +389,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = prov.kpostek.pieschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pie Schedule/Preview Content\"";
@@ -398,6 +421,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = prov.kpostek.pieschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,10 +7,15 @@
 
 import Foundation
 import RealmSwift
+import SwiftDate
 
 class AltapiManager {
     private let urlSession = URLSession(configuration: .default)
     private let baseUrl = URL(string: "https://altapi.kpostek.dev/")!
+    
+    func getEntries(for date: Date) async throws -> ScheduleEntryResponse? {
+        return try await getEntries(for: date.toFormat("yyyy-MM-dd"))
+    }
     
     func getEntries(for dateString: String) async throws -> ScheduleEntryResponse? {
         let url = baseUrl.appendingPathComponent("public/timetable/\(dateString)")
