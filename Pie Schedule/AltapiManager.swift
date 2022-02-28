@@ -50,10 +50,16 @@ class AltapiManager {
         
         // Funny thing, Apple uses ISO8601 without seconds fractions, how cruel...
         let decoder = JSONDecoder()
-        let formatter = DateFormatter()
-        formatter.locale = .current
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        decoder.dateDecodingStrategy = .formatted(formatter)
+        decoder.dateDecodingStrategy = .custom({ decode in
+            let container = try decode.singleValueContainer()
+            let dateString = try container.decode(String.self)
+            
+            if let date = dateString.toISODate() {
+                return date.date
+            }
+            
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "This string \(dateString) is not a valid ISO string.")
+        })
         
         let result = try decoder.decode(ScheduleEntryResponse.self, from: data)
         let realmAsync = try await Realm(configuration: self.realm.configuration)
