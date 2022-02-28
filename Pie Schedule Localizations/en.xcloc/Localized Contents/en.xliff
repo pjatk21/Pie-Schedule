@@ -5,6 +5,11 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
+      <trans-unit id="API response times are even 90x faster compared to the response time of orginal web service." xml:space="preserve">
+        <source>API response times are even 90x faster compared to the response time of orginal web service.</source>
+        <target>API response times are even 90x faster compared to the response time of orginal web service.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="About" xml:space="preserve">
         <source>About</source>
         <target>About</target>
@@ -13,6 +18,16 @@
       <trans-unit id="Add group" xml:space="preserve">
         <source>Add group</source>
         <target>Add group</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard." xml:space="preserve">
+        <source>All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard.</source>
+        <target>All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="App has been translated to the multiple languages, thanks to: community." xml:space="preserve">
+        <source>App has been translated to the multiple languages, thanks to: community.</source>
+        <target>App has been translated to the multiple languages, thanks to: community.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Date" xml:space="preserve">
@@ -26,8 +41,18 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Dodaj grupę" xml:space="preserve">
-        <source>Dodaj grupę</source>
+        <source>Add group</source>
         <target>Add group</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fast as ****" xml:space="preserve">
+        <source>Fast as ****</source>
+        <target>Fast as ****</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Forget about that web app from 2010." xml:space="preserve">
+        <source>Forget about that web app from 2010.</source>
+        <target>Forget about that web app from 2010.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
@@ -41,8 +66,23 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Nazwa grupy" xml:space="preserve">
-        <source>Nazwa grupy</source>
+        <source>Group name</source>
         <target>Group name</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pie Schedule is fast!" xml:space="preserve">
+        <source>Pie Schedule is fast!</source>
+        <target>Pie Schedule is fast!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧" xml:space="preserve">
+        <source>Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧</source>
+        <target>Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Polyglot" xml:space="preserve">
+        <source>Polyglot</source>
+        <target>Polyglot</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
@@ -55,18 +95,28 @@
         <target>Settings</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Timezone aware" xml:space="preserve">
+        <source>Timezone aware</source>
+        <target>Timezone aware</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Version: %@" xml:space="preserve">
         <source>Version: %@</source>
         <target>Version: %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wyczyść UserDefaults" xml:space="preserve">
-        <source>Wyczyść UserDefaults</source>
+        <source>Clear UserDefaults</source>
         <target>Clear UserDefaults</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Your new schedule" xml:space="preserve">
+        <source>Your new schedule</source>
+        <target>Your new schedule</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Zatwierdź" xml:space="preserve">
-        <source>Zatwierdź</source>
+        <source>Accept</source>
         <target>Accept</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>

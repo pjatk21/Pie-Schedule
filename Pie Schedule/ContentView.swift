@@ -68,13 +68,13 @@ struct ContentView: View {
     }
     
     private let pages = [
-        WelcomeSheetPage(title: "Pie Schedule is fast!", rows: [
-            WelcomeSheetPageRow(imageSystemName: "calendar", title: "Your new schedule", content: "Forget about that web app from 2010."),
-            WelcomeSheetPageRow(imageSystemName: "hare", title: "Fast as ****", content: "API response times are even 90x faster compared to the response time of orginal web service.")
+        WelcomeSheetPage(title: String(localized: "Pie Schedule is fast!"), rows: [
+            WelcomeSheetPageRow(imageSystemName: "calendar", title: String(localized: "Your new schedule"), content: String(localized: "Forget about that web app from 2010.")),
+            WelcomeSheetPageRow(imageSystemName: "hare", title: String(localized: "Fast as ****"), content: String(localized: "API response times are even 90x faster compared to the response time of orginal web service."))
         ]),
-        WelcomeSheetPage(title: "Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧", rows: [
-            WelcomeSheetPageRow(imageSystemName: "airplane.departure", title: "Timezone aware", content: "All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard."),
-            WelcomeSheetPageRow(imageSystemName: "character.bubble", title: "Poliglota", content: "App has been translated to the multiple languages, thanks to: community.")
+        WelcomeSheetPage(title: String(localized: "Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧"), rows: [
+            WelcomeSheetPageRow(imageSystemName: "airplane.departure", title: String(localized: "Timezone aware"), content: String(localized: "All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard.")),
+            WelcomeSheetPageRow(imageSystemName: "character.bubble", title: String(localized: "Polyglot"), content: String(localized: "App has been translated to the multiple languages, thanks to: community."))
         ])
     ]
 }

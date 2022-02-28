@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="Pie Schedule/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="uk">
+  <file original="Pie Schedule/en.lproj/Localizable.strings" source-language="en" target-language="uk" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
+      <trans-unit id="API response times are even 90x faster compared to the response time of orginal web service." xml:space="preserve">
+        <source>API response times are even 90x faster compared to the response time of orginal web service.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="About" xml:space="preserve">
         <source>About</source>
         <target>Про</target>
@@ -13,6 +17,14 @@
       <trans-unit id="Add group" xml:space="preserve">
         <source>Add group</source>
         <target>Додати групу</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard." xml:space="preserve">
+        <source>All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="App has been translated to the multiple languages, thanks to: community." xml:space="preserve">
+        <source>App has been translated to the multiple languages, thanks to: community.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Date" xml:space="preserve">
@@ -26,8 +38,15 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Dodaj grupę" xml:space="preserve">
-        <source>Dodaj grupę</source>
-        <target>Додати групу</target>
+        <source>Add group</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fast as ****" xml:space="preserve">
+        <source>Fast as ****</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Forget about that web app from 2010." xml:space="preserve">
+        <source>Forget about that web app from 2010.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
@@ -41,8 +60,19 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Nazwa grupy" xml:space="preserve">
-        <source>Nazwa grupy</source>
-        <target>Назва групи</target>
+        <source>Group name</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pie Schedule is fast!" xml:space="preserve">
+        <source>Pie Schedule is fast!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧" xml:space="preserve">
+        <source>Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Polyglot" xml:space="preserve">
+        <source>Polyglot</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
@@ -55,18 +85,25 @@
         <target>Налаштування</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Timezone aware" xml:space="preserve">
+        <source>Timezone aware</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Version: %@" xml:space="preserve">
         <source>Version: %@</source>
         <target>Версія: %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wyczyść UserDefaults" xml:space="preserve">
-        <source>Wyczyść UserDefaults</source>
+        <source>Clear UserDefaults</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Your new schedule" xml:space="preserve">
+        <source>Your new schedule</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Zatwierdź" xml:space="preserve">
-        <source>Zatwierdź</source>
-        <target>Підтвердьте</target>
+        <source>Accept</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>
