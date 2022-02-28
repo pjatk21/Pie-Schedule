@@ -60,8 +60,13 @@ struct SettingsGroupAdd: View {
             } label: {
                 Label("Zatwierdź", systemImage: "plus")
             }
+            .disabled(!isValid())
         }
         .navigationTitle("Dodaj grupę")
+    }
+    
+    private func isValid() -> Bool {
+        return groupName.range(of: "^W", options: .regularExpression) != nil && groupName.range(of: "\\d+[a-z]", options: .regularExpression) != nil
     }
 }
 
