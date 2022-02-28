@@ -25,6 +25,14 @@ struct Settings: View {
                     .onDelete(perform: deleteHandler)
                 }
             }
+            
+            #if DEBUG
+            Section("Developer") {
+                Button("Wyczyść UserDefaults") {
+                    UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                }
+            }
+            #endif
         }
         .navigationTitle("Ustawienia")
     }
