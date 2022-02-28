@@ -14,9 +14,9 @@ struct Settings: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Grupy")) {
+            Section(header: Text("Groups")) {
                 NavigationLink(destination: SettingsGroupAdd()) {
-                    Label("Dodaj grupę", systemImage: "plus")
+                    Label("Add group", systemImage: "plus")
                 }
                 List {
                     ForEach(groups) {
@@ -34,14 +34,14 @@ struct Settings: View {
             }
             #endif
             
-            Section("O aplikacji") {
-                Text("Wersja: \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)")
-                Button("Github") {
+            Section("About") {
+                Text("Version: \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)")
+                Button("Github repo") {
                     UIApplication.shared.open(URL(string: "https://github.com/pjatk21/Pie-Schedule")!)
                 }
             }
         }
-        .navigationTitle("Ustawienia")
+        .navigationTitle("Settings")
     }
     
     private func deleteHandler(indexSet: IndexSet) {

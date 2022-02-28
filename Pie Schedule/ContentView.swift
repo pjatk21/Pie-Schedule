@@ -50,7 +50,7 @@ struct ContentView: View {
                     let _ = try! await altapi.updateEntries(for: activeDate)
                 }
             }
-            .navigationTitle("Plan zajęć")
+            .navigationTitle("Schedule")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -68,13 +68,13 @@ struct ContentView: View {
     }
     
     private let pages = [
-        WelcomeSheetPage(title: "Pie Schedule", rows: [
-            WelcomeSheetPageRow(imageSystemName: "calendar", title: "Twoja nowa aplikacja do planu zajęć", content: "Już nigdy nie tykaj tej webowej apki z 2010"),
-            WelcomeSheetPageRow(imageSystemName: "hare", title: "Ekstermalnie szybkie API", content: "Czas odpowiedzi API z zajęciami jest nawet 90x krótszy niż czas odpowiedzi strony z planem zajęć. Nie bój się, że nie będziesz mógł/mógła sprawdzić, swojego planu zajęć.")
+        WelcomeSheetPage(title: "Pie Schedule is fast!", rows: [
+            WelcomeSheetPageRow(imageSystemName: "calendar", title: "Your new schedule", content: "Forget about that web app from 2010."),
+            WelcomeSheetPageRow(imageSystemName: "hare", title: "Fast as ****", content: "API response times are even 90x faster compared to the response time of orginal web service.")
         ]),
-        WelcomeSheetPage(title: "Pie Schedule", rows: [
-            WelcomeSheetPageRow(imageSystemName: "airplane.departure", title: "Zawsze na czas", content: "Aplikacja uwzględnia twoją aktualną strefę czasową, nie musisz już przeliczać kiedy rozpoczyna się wykład."),
-            WelcomeSheetPageRow(imageSystemName: "character.bubble", title: "Poliglota", content: "Aplikacja dzięki wsparciu społeczności została przetłumacznona na takie jęzki jak ukraiński/białoruski")
+        WelcomeSheetPage(title: "Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧", rows: [
+            WelcomeSheetPageRow(imageSystemName: "airplane.departure", title: "Timezone aware", content: "All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard."),
+            WelcomeSheetPageRow(imageSystemName: "character.bubble", title: "Poliglota", content: "App has been translated to the multiple languages, thanks to: community.")
         ])
     ]
 }
