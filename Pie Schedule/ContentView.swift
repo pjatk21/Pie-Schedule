@@ -21,28 +21,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Button {
-                        activeDate = activeDate - 1.days
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 10)
-                            .padding(.horizontal, 25.0)
-                    }
-                    DatePicker("Date", selection: $activeDate, displayedComponents: [.date])
-                        .datePickerStyle(DefaultDatePickerStyle())
-                    Button {
-                        activeDate = activeDate + 1.days
-                    } label: {
-                        Image(systemName: "chevron.right")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 10)
-                            .padding(.horizontal, 25.0)
-                    }
-                }
+                DateControl(activeDate: $activeDate)
                 List(entriesActive()) { entry in
                     EntryPreviewRow(entry: entry)
                 }
