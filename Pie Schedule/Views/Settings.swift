@@ -33,6 +33,13 @@ struct Settings: View {
                 }
             }
             #endif
+            
+            Section("O aplikacji") {
+                Text("Wersja: \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)")
+                Button("Github") {
+                    UIApplication.shared.open(URL(string: "https://github.com/pjatk21/Pie-Schedule")!)
+                }
+            }
         }
         .navigationTitle("Ustawienia")
     }
