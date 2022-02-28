@@ -13,18 +13,25 @@ struct EntryPreviewRow: View {
     @State var entry: ScheduleEntry
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(entry.code)
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-            Text((entry.name))
-                .font(.system(size: 12))
-                .italic()
-            Text((entry.type))
-                .font(.system(size: 12))
-                .italic()
-            HStack {
-                Text(entry.begin.formatted(date: .omitted, time: .shortened))
-                Text(entry.room)
+        HStack {
+            VStack(alignment: .leading) {
+                Text(entry.code)
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                Text(entry.begin.formatted(date: .omitted, time: .shortened) + " - " + entry.end.formatted(date: .omitted, time: .shortened))
+            }
+            Spacer()
+            VStack(alignment: .trailing) {
+                Text((entry.name))
+                    .font(.system(size: 12))
+                    .italic()
+                Text((entry.type))
+                    .font(.system(size: 12))
+                    .italic()
+                if let tutor = entry.tutor {
+                    Text(tutor)
+                        .font(.system(size: 12))
+                        .italic()
+                }
             }
         }
     }
