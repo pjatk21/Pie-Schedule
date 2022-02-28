@@ -17,7 +17,7 @@ class AltapiManager {
     func updateEntries(for date: Date) async throws -> ScheduleEntryResponse? {
         // create url and query
         let dateString = date.toFormat("yyyy-MM-dd")
-        let url = baseUrl.appendingPathComponent("public/timetable/\(dateString)")
+        let url = baseUrl.appendingPathComponent("public/timetable/date/\(dateString)")
         var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         
         if realm.objects(ScheduleGroup.self).count == 0 {
