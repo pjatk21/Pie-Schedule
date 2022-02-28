@@ -15,11 +15,8 @@ class AltapiManager {
     private var realm = try! Realm(configuration: .init(deleteRealmIfMigrationNeeded: true))
     
     func updateEntries(for date: Date) async throws -> ScheduleEntryResponse? {
-        return try await updateEntries(for: date.toFormat("yyyy-MM-dd"))
-    }
-    
-    func updateEntries(for dateString: String) async throws -> ScheduleEntryResponse? {
         // create url and query
+        let dateString = date.toFormat("yyyy-MM-dd")
         let url = baseUrl.appendingPathComponent("public/timetable/\(dateString)")
         var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         
@@ -42,7 +39,7 @@ class AltapiManager {
         
         // remove old data
         let outdated = realm.objects(ScheduleEntry.self).where {
-            $0.dateString == dateString
+            $0.begin > date.date && $0.begin < date.dateAtEndOf(.day).date
         }
         try realm.write {
             realm.delete(outdated)
@@ -50,7 +47,15 @@ class AltapiManager {
         
         // save new data
         let (data, _) = try await urlSession.data(from: urlFinal)
-        let result = try JSONDecoder().decode(ScheduleEntryResponse.self, from: data)
+        
+        // Funny thing, Apple uses ISO8601 without seconds fractions, how cruel...
+        let decoder = JSONDecoder()
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        
+        let result = try decoder.decode(ScheduleEntryResponse.self, from: data)
         let realmAsync = try await Realm(configuration: self.realm.configuration)
         try realmAsync.write {
             realmAsync.add(result.entries)

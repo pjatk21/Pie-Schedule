@@ -23,7 +23,7 @@ struct EntryPreviewRow: View {
                 .font(.system(size: 12))
                 .italic()
             HStack {
-                Text(entry.beginDate.formatted(date: .omitted, time: .shortened))
+                Text(entry.begin.formatted(date: .omitted, time: .shortened))
                 Text(entry.room ?? "Brak sali")
             }
         }

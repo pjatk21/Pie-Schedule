@@ -61,7 +61,7 @@ struct ContentView: View {
     }
 
     func entriesActive() -> Results<ScheduleEntry> {
-        entries.where { $0.dateString == activeDate.toFormat("yyyy-MM-dd") }
+        entries.where { $0.begin > activeDate && $0.begin < activeDate.dateAtEndOf(.day) }
     }
 }
 
