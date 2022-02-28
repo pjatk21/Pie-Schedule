@@ -8,6 +8,7 @@
 import RealmSwift
 import SwiftDate
 import SwiftUI
+import WelcomeSheet
 
 struct ContentView: View {
     private let altapi = AltapiManager()
@@ -15,6 +16,7 @@ struct ContentView: View {
     @ObservedResults(ScheduleEntry.self) var entries
     @Environment(\.realm) var realm: Realm
     @State var activeDate = Date().dateBySet(hour: 0, min: 0, secs: 0)!
+    @AppStorage("first.launch") private var showSheet = true
 
     var body: some View {
         NavigationView {
@@ -58,11 +60,18 @@ struct ContentView: View {
                 }
             }
         }
+        .welcomeSheet(isPresented: $showSheet, onDismiss: {}, isSlideToDismissDisabled: false, pages: pages)
     }
 
     func entriesActive() -> Results<ScheduleEntry> {
         entries.where { $0.begin > activeDate && $0.begin < activeDate.dateAtEndOf(.day) }
     }
+    
+    private let pages = [
+        WelcomeSheetPage(title: "Pie Schedule", rows: [
+            WelcomeSheetPageRow(imageSystemName: "calendar", title: "Twoja nowa aplikacja do planu zajęć", content: "Już nigdy nie tykaj tej webowej apki z 2010")
+        ])
+    ]
 }
 
 struct ContentView_Previews: PreviewProvider {

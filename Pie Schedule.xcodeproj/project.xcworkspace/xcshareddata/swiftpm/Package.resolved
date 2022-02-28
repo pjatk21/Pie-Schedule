@@ -18,6 +18,15 @@
           "revision": "6190d0cefff3013e77ed567e6b074f324e5c5bf5",
           "version": null
         }
+      },
+      {
+        "package": "WelcomeSheet",
+        "repositoryURL": "https://github.com/MAJKFL/Welcome-Sheet",
+        "state": {
+          "branch": "main",
+          "revision": "33d2836eea920b19dba0f82581a1864552eed547",
+          "version": null
+        }
       }
     ]
   },

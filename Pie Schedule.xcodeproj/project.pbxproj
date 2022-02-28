@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610C646327CC550B00321CBE /* WelcomeSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 610C646227CC550B00321CBE /* WelcomeSheet */; };
 		611B6D5D27C4D2F600A143AB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5C27C4D2F600A143AB /* Settings.swift */; };
 		611B6D5F27C4D32200A143AB /* EntryPreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */; };
 		6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E72D27C404B2008C357C /* PieScheduleApp.swift */; };
@@ -58,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6142E74427C40760008C357C /* RealmSwift in Frameworks */,
+				610C646327CC550B00321CBE /* WelcomeSheet in Frameworks */,
 				6142E74227C40760008C357C /* Realm in Frameworks */,
 				61A7391927C447F700B1D4F5 /* SwiftDateStatic in Frameworks */,
 				61A7391727C447F700B1D4F5 /* SwiftDate in Frameworks */,
@@ -172,6 +174,7 @@
 				6142E74327C40760008C357C /* RealmSwift */,
 				61A7391627C447F700B1D4F5 /* SwiftDate */,
 				61A7391827C447F700B1D4F5 /* SwiftDateStatic */,
+				610C646227CC550B00321CBE /* WelcomeSheet */,
 			);
 			productName = "Pie Schedule";
 			productReference = 6142E72A27C404B2008C357C /* Pie Schedule.app */;
@@ -203,6 +206,7 @@
 			mainGroup = 6142E72127C404B2008C357C;
 			packageReferences = (
 				61A7390B27C4464A00B1D4F5 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				610C646127CC550B00321CBE /* XCRemoteSwiftPackageReference "Welcome-Sheet" */,
 			);
 			productRefGroup = 6142E72B27C404B2008C357C /* Products */;
 			projectDirPath = "";
@@ -448,6 +452,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		610C646127CC550B00321CBE /* XCRemoteSwiftPackageReference "Welcome-Sheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MAJKFL/Welcome-Sheet";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		61A7390B27C4464A00B1D4F5 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate";
@@ -459,6 +471,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		610C646227CC550B00321CBE /* WelcomeSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 610C646127CC550B00321CBE /* XCRemoteSwiftPackageReference "Welcome-Sheet" */;
+			productName = WelcomeSheet;
+		};
 		6142E74127C40760008C357C /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Realm;
