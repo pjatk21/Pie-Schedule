@@ -14,17 +14,17 @@ struct EntryPreviewRow: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(entry.code ?? "Nieokreślono")
+            Text(entry.code)
                 .font(.system(size: 24, weight: .bold, design: .rounded))
-            Text((entry.name ?? "Nieokreślono"))
+            Text((entry.name))
                 .font(.system(size: 12))
                 .italic()
-            Text((entry.type ?? "Nieokreślono"))
+            Text((entry.type))
                 .font(.system(size: 12))
                 .italic()
             HStack {
                 Text(entry.begin.formatted(date: .omitted, time: .shortened))
-                Text(entry.room ?? "Brak sali")
+                Text(entry.room)
             }
         }
     }
