@@ -1,12 +1,2 @@
-{
-  "developmentRegion": "en",
-  "project": "Pie Schedule.xcodeproj",
-  "targetLocale": "uk",
-  "toolInfo": {
-    "toolBuildNumber": "13E5104i",
-    "toolID": "com.apple.dt.xcode",
-    "toolName": "Xcode",
-    "toolVersion": "13.3"
-  },
-  "version": "1.0"
-}
+/* Bundle name */
+"CFBundleName" = "Pie Schedule";
