@@ -52,6 +52,7 @@
 		6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntryResponse.swift; sourceTree = "<group>"; };
 		619181B427CCEBC100DC265A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		619181B627CCEBD600DC265A /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		619181B727CCF0C400DC265A /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		61A7390927C4333200B1D4F5 /* AltapiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltapiManager.swift; sourceTree = "<group>"; };
 		61A7391A27C44E4800B1D4F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +261,7 @@
 			children = (
 				619181B427CCEBC100DC265A /* en */,
 				619181B627CCEBD600DC265A /* pl */,
+				619181B727CCF0C400DC265A /* uk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

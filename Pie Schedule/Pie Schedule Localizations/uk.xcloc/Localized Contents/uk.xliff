@@ -7,46 +7,57 @@
     <body>
       <trans-unit id="About" xml:space="preserve">
         <source>About</source>
+        <target>Про</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add group" xml:space="preserve">
         <source>Add group</source>
+        <target>Додати групу</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Date" xml:space="preserve">
         <source>Date</source>
+        <target>Дата</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Developer" xml:space="preserve">
         <source>Developer</source>
+        <target>Розробник</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Dodaj grupę" xml:space="preserve">
         <source>Dodaj grupę</source>
+        <target>Додати групу</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
         <source>Github repo</source>
+        <target>Репозиторій Github</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Groups" xml:space="preserve">
         <source>Groups</source>
+        <target>Групи</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Nazwa grupy" xml:space="preserve">
         <source>Nazwa grupy</source>
+        <target>Назва групи</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
         <source>Schedule</source>
+        <target>Розклад</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Settings" xml:space="preserve">
         <source>Settings</source>
+        <target>Налаштування</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Version: %@" xml:space="preserve">
         <source>Version: %@</source>
+        <target>Версія: %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wyczyść UserDefaults" xml:space="preserve">
@@ -55,6 +66,7 @@
       </trans-unit>
       <trans-unit id="Zatwierdź" xml:space="preserve">
         <source>Zatwierdź</source>
+        <target>Підтвердьте</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>
