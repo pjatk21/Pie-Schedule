@@ -1,38 +1,80 @@
-/* No comment provided by engineer. */
-"About" = "About";
-
-/* No comment provided by engineer. */
-"Add group" = "Add group";
-
-/* No comment provided by engineer. */
-"Date" = "Date";
-
-/* No comment provided by engineer. */
-"Developer" = "Developer";
-
-/* No comment provided by engineer. */
-"Dodaj grupę" = "Dodaj grupę";
-
-/* No comment provided by engineer. */
-"Github repo" = "Github repo";
-
-/* No comment provided by engineer. */
-"Groups" = "Groups";
-
-/* No comment provided by engineer. */
-"Nazwa grupy" = "Nazwa grupy";
-
-/* No comment provided by engineer. */
-"Schedule" = "Schedule";
-
-/* No comment provided by engineer. */
-"Settings" = "Settings";
-
-/* No comment provided by engineer. */
-"Version: %@" = "Version: %@";
-
-/* No comment provided by engineer. */
-"Wyczyść UserDefaults" = "Wyczyść UserDefaults";
-
-/* No comment provided by engineer. */
-"Zatwierdź" = "Zatwierdź";
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Pie Schedule/en.lproj/Localizable.strings" source-language="en" target-language="pl" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
+    </header>
+    <body>
+      <trans-unit id="About" xml:space="preserve">
+        <source>About</source>
+        <target state="needs-translation">About</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add group" xml:space="preserve">
+        <source>Add group</source>
+        <target state="needs-translation">Add group</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Date" xml:space="preserve">
+        <source>Date</source>
+        <target state="needs-translation">Date</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Developer" xml:space="preserve">
+        <source>Developer</source>
+        <note>No comment provided by engineer.</note>
+      <target state="needs-translation">Developer</target></trans-unit>
+      <trans-unit id="Dodaj grupę" xml:space="preserve">
+        <source>Dodaj grupę</source>
+        <note>No comment provided by engineer.</note>
+      <target state="needs-translation">Dodaj grupę</target></trans-unit>
+      <trans-unit id="Github repo" xml:space="preserve">
+        <source>Github repo</source>
+        <note>No comment provided by engineer.</note>
+      <target state="needs-translation">Github repo</target></trans-unit>
+      <trans-unit id="Groups" xml:space="preserve">
+        <source>Groups</source>
+        <target state="needs-translation">Groups</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Nazwa grupy" xml:space="preserve">
+        <source>Nazwa grupy</source>
+        <note>No comment provided by engineer.</note>
+      <target state="needs-translation">Nazwa grupy</target></trans-unit>
+      <trans-unit id="Schedule" xml:space="preserve">
+        <source>Schedule</source>
+        <target state="needs-translation">Schedule</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Settings" xml:space="preserve">
+        <source>Settings</source>
+        <target state="needs-translation">Settings</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Version: %@" xml:space="preserve">
+        <source>Version: %@</source>
+        <target state="needs-translation">Version: %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Wyczyść UserDefaults" xml:space="preserve">
+        <source>Wyczyść UserDefaults</source>
+        <note>No comment provided by engineer.</note>
+      <target state="needs-translation">Wyczyść UserDefaults</target></trans-unit>
+      <trans-unit id="Zatwierdź" xml:space="preserve">
+        <source>Zatwierdź</source>
+        <note>No comment provided by engineer.</note>
+      <target state="needs-translation">Zatwierdź</target></trans-unit>
+    </body>
+  </file>
+  <file original="Pie Schedule/en.lproj/Pie Schedule-InfoPlist.strings" datatype="plaintext" source-language="en" target-language="pl">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Pie Schedule</source>
+        <note>Bundle name</note>
+      <target state="needs-translation">Pie Schedule</target></trans-unit>
+    </body>
+  </file>
+</xliff>
