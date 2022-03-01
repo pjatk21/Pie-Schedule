@@ -15,7 +15,7 @@ struct ContentView: View {
 
     @ObservedResults(ScheduleEntry.self) var entries
     @Environment(\.realm) var realm: Realm
-    @State var activeDate = Date().dateBySet(hour: 0, min: 0, secs: 0)!
+    @State var activeDate = Date().dateAtStartOf(.day)
     @AppStorage("first.launch") private var showSheet = true
 
     var body: some View {
