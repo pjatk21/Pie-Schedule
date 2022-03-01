@@ -13,32 +13,35 @@ struct Settings: View {
     @Environment(\.realm) private var realm: Realm
     
     var body: some View {
-        Form {
-            Section(header: Text("Groups")) {
-                NavigationLink(destination: SettingsGroupAdd()) {
-                    Label("Add group", systemImage: "plus")
-                }
-                List {
-                    ForEach(groups) {
-                        Text($0.raw)
+        VStack {
+            Form {
+                Section(header: Text("Groups")) {
+                    NavigationLink(destination: SettingsGroupAdd()) {
+                        Label("Add group", systemImage: "plus")
                     }
-                    .onDelete(perform: deleteHandler)
+                    List {
+                        ForEach(groups) {
+                            Text($0.raw)
+                        }
+                        .onDelete(perform: deleteHandler)
+                    }
                 }
-            }
-            
-            #if DEBUG
-            Section("Developer") {
-                Button("Wyczyść UserDefaults") {
-                    UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                
+                #if DEBUG
+                Section("Developer") {
+                    Button("Wyczyść UserDefaults") {
+                        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                    }
                 }
-            }
-            #endif
-            
-            Section("About") {
-                Text("Version: \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)")
-                Button("Github repo") {
-                    UIApplication.shared.open(URL(string: "https://github.com/pjatk21/Pie-Schedule")!)
+                #endif
+                
+                Section("About") {
+                    Text("Version: \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)")
+                    Button("Github repo") {
+                        UIApplication.shared.open(URL(string: "https://github.com/pjatk21/Pie-Schedule")!)
+                    }
                 }
+                Text("Made with ❤️ by Chris")
             }
         }
         .navigationTitle("Settings")
@@ -59,12 +62,21 @@ struct Settings: View {
 
 struct SettingsGroupAdd: View {
     @State private var groupName: String = ""
+    @State private var prefix: String = "WIs"
+    @State private var semester: String = "I.1"
     @Environment(\.realm) private var realm: Realm
     @Environment(\.dismiss) private var dismiss
     
+    private var prefixes = ["WIs", "WIn"]
+    private var semesters: [String] = {
+        (1...7).map {
+            "I.\($0)"
+        }
+    }()
+    
     var body: some View {
         Form {
-            TextField("Nazwa grupy", text: $groupName)
+            TextField("Group name", text: $groupName)
             Button {
                 let sg = ScheduleGroup()
                 sg.raw = groupName
@@ -73,15 +85,36 @@ struct SettingsGroupAdd: View {
                 }
                 dismiss.callAsFunction()
             } label: {
-                Label("Zatwierdź", systemImage: "plus")
+                Label("Add", systemImage: "plus")
             }
             .disabled(!isValid())
+            Section {
+                VStack {
+                    Picker(selection: $prefix, label: Text("A")) {
+                        ForEach(0..<prefixes.count) {
+                            Text(prefixes[$0]).tag(prefixes[$0])
+                        }
+                    }.pickerStyle(.segmented)
+                    Picker(selection: $semester, label: Text("B")) {
+                        ForEach(0..<semesters.count) {
+                            Text(semesters[$0]).tag(semesters[$0])
+                        }
+                    }.pickerStyle(.segmented)
+                }
+            }
         }
-        .navigationTitle("Dodaj grupę")
+        .navigationTitle("Add group")
+        .onChange(of: prefix, perform: { _ in updateGroupName() })
+        .onChange(of: semester, perform: { _ in updateGroupName() })
+        .onAppear(perform: updateGroupName)
     }
     
     private func isValid() -> Bool {
         return groupName.range(of: "^W", options: .regularExpression) != nil && groupName.range(of: "\\d+[a-z]", options: .regularExpression) != nil
+    }
+    
+    private func updateGroupName() {
+        groupName = "\(prefix) \(semester) - "
     }
 }
 
