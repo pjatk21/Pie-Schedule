@@ -23,7 +23,10 @@ struct ContentView: View {
             VStack {
                 DateControl(activeDate: $activeDate)
                 List(entriesActive()) { entry in
-                    EntryPreviewRow(entry: entry)
+                    NavigationLink(destination: EntryDetailsView(scheduleEntry: entry)) {
+                        EntryPreviewRow(entry: entry)
+                            .padding(.vertical)
+                    }
                 }
                 .refreshable {
                     let _ = try! await altapi.updateEntries(for: activeDate)
