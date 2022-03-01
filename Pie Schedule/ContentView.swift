@@ -52,12 +52,12 @@ struct ContentView: View {
     
     private let pages = [
         WelcomeSheetPage(title: String(localized: "Pie Schedule is fast!"), rows: [
-            WelcomeSheetPageRow(imageSystemName: "calendar", title: String(localized: "Your new schedule"), content: String(localized: "Forget about that web app from 2010.")),
-            WelcomeSheetPageRow(imageSystemName: "hare", title: String(localized: "Fast as ****"), content: String(localized: "API response times are even 90x faster compared to the response time of orginal web service."))
+            WelcomeSheetPageRow(imageSystemName: "calendar", title: String(localized: "Your new schedule"), content: String(localized: "2010webAppCringe", comment: "Say how cringe is using outdated software")),
+            WelcomeSheetPageRow(imageSystemName: "hare", title: String(localized: "Fast as ****"), content: String(localized: "apiFast", comment: "Tell how fast this API is"))
         ]),
-        WelcomeSheetPage(title: String(localized: "Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧"), rows: [
-            WelcomeSheetPageRow(imageSystemName: "airplane.departure", title: String(localized: "Timezone aware"), content: String(localized: "All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard.")),
-            WelcomeSheetPageRow(imageSystemName: "character.bubble", title: String(localized: "Polyglot"), content: String(localized: "App has been translated to the multiple languages, thanks to: community."))
+        WelcomeSheetPage(title: String(localized: "🇵🇱🇺🇦🇬🇧"), rows: [
+            WelcomeSheetPageRow(imageSystemName: "airplane.departure", title: String(localized: "Timezone aware"), content: String(localized: "timezoneAwareDesciption", comment: "Say how timezones work")),
+            WelcomeSheetPageRow(imageSystemName: "character.bubble", title: String(localized: "Polyglot"), content: String(localized: "appTranslateForCommunityByCommunity", comment: "Say that app has been translated into many languages"))
         ])
     ]
 }
