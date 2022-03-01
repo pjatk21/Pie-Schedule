@@ -12,7 +12,8 @@ extension Realm.Configuration {
     static let previewConfig: Realm.Configuration = .init(inMemoryIdentifier: "preview")
     static let devConfig: Realm.Configuration = .init(deleteRealmIfMigrationNeeded: true)
     static let prodConfig: Realm.Configuration = {
-        let realmLocation = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.\(Bundle.main.bundleIdentifier!)")!
+        var realmLocation = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.\(Bundle.main.bundleIdentifier!)")!
+        realmLocation.appendPathComponent("pieschedule.realm")
         return Realm.Configuration(fileURL: realmLocation, deleteRealmIfMigrationNeeded: true)
     }()
 }
