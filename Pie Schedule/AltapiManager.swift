@@ -12,7 +12,11 @@ import SwiftDate
 class AltapiManager {
     private let urlSession = URLSession(configuration: .default)
     private let baseUrl = URL(string: "https://altapi.kpostek.dev/")!
-    private var realm = try! Realm(configuration: .prodConfig)
+    private var realm: Realm
+    
+    init(realmConfig: Realm.Configuration = .prodConfig) {
+        realm = try! Realm(configuration: realmConfig)
+    }
     
     func updateEntries(for date: Date) async throws -> ScheduleEntryResponse? {
         // create url and query
