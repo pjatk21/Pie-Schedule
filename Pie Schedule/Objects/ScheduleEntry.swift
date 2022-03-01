@@ -34,6 +34,7 @@ class ScheduleEntry: Object, Codable, Identifiable {
         loremEntry.end = loremEntry.begin + 90.minutes
         loremEntry.name = "Tworzenie interfejsów w SwiftUI"
         loremEntry.code = "TIS"
+        loremEntry.type = "Ćwiczenia"
         loremEntry.tutor = "Krystian Postek" // I wish
         loremEntry.room = "A/357"
         loremEntry.groups.append("WIs I.2 - 46c")
