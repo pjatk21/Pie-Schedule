@@ -39,6 +39,7 @@ struct ContentView: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
         .welcomeSheet(isPresented: $showSheet, onDismiss: {}, isSlideToDismissDisabled: false, pages: pages)
     }
 
