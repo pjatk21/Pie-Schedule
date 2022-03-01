@@ -39,6 +39,7 @@
 		61A7390A27C4333200B1D4F5 /* AltapiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A7390927C4333200B1D4F5 /* AltapiManager.swift */; };
 		61A7391727C447F700B1D4F5 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 61A7391627C447F700B1D4F5 /* SwiftDate */; };
 		61A7391927C447F700B1D4F5 /* SwiftDateStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 61A7391827C447F700B1D4F5 /* SwiftDateStatic */; };
+		61CD380E27CECCED00E79016 /* EntryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD380D27CECCED00E79016 /* EntryDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		61A7390927C4333200B1D4F5 /* AltapiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltapiManager.swift; sourceTree = "<group>"; };
 		61A7391A27C44E4800B1D4F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		61CD380C27CEA66500E79016 /* Pie-Schedule-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Pie-Schedule-Info.plist"; sourceTree = SOURCE_ROOT; };
+		61CD380D27CECCED00E79016 /* EntryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				611B6D5C27C4D2F600A143AB /* Settings.swift */,
 				611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */,
+				61CD380D27CECCED00E79016 /* EntryDetailsView.swift */,
 				61290B7427CD7B23001F1CFC /* DateControl.swift */,
 			);
 			path = Views;
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CD380E27CECCED00E79016 /* EntryDetailsView.swift in Sources */,
 				61A7390A27C4333200B1D4F5 /* AltapiManager.swift in Sources */,
 				6142E73F27C4058D008C357C /* ScheduleGroup.swift in Sources */,
 				6110098527CE1EA0008894D7 /* RealmConfiguration.swift in Sources */,
@@ -597,7 +601,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Pie Schedule/Pie Schedule.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Pie Schedule/Preview Content\"";
 				DEVELOPMENT_TEAM = 4FMVLVPJGA;
 				ENABLE_PREVIEWS = YES;
@@ -613,7 +617,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = prov.kpostek.pieschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -632,7 +636,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Pie Schedule/Pie Schedule.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Pie Schedule/Preview Content\"";
 				DEVELOPMENT_TEAM = 4FMVLVPJGA;
 				ENABLE_PREVIEWS = YES;
@@ -648,7 +652,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = prov.kpostek.pieschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
