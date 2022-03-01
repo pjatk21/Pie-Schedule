@@ -40,6 +40,7 @@
 		61A7391727C447F700B1D4F5 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 61A7391627C447F700B1D4F5 /* SwiftDate */; };
 		61A7391927C447F700B1D4F5 /* SwiftDateStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 61A7391827C447F700B1D4F5 /* SwiftDateStatic */; };
 		61CD380E27CECCED00E79016 /* EntryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD380D27CECCED00E79016 /* EntryDetailsView.swift */; };
+		61CD381127CEDE4100E79016 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61CD380F27CEDE4100E79016 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		61A7391A27C44E4800B1D4F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		61CD380C27CEA66500E79016 /* Pie-Schedule-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Pie-Schedule-Info.plist"; sourceTree = SOURCE_ROOT; };
 		61CD380D27CECCED00E79016 /* EntryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsView.swift; sourceTree = "<group>"; };
+		61CD381027CEDE4100E79016 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				611009D027CE541E008894D7 /* QuickPeek.intentdefinition */,
 				611009D127CE541F008894D7 /* Assets.xcassets */,
 				611009D327CE541F008894D7 /* Info.plist */,
+				61CD380F27CEDE4100E79016 /* Localizable.strings */,
 			);
 			path = QuickPeek;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				611009D227CE541F008894D7 /* Assets.xcassets in Resources */,
+				61CD381127CEDE4100E79016 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,14 @@
 				619181B427CCEBC100DC265A /* en */,
 				619181B627CCEBD600DC265A /* pl */,
 				619181B727CCF0C400DC265A /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		61CD380F27CEDE4100E79016 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61CD381027CEDE4100E79016 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

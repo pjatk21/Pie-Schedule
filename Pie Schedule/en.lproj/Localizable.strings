@@ -1,8 +1,20 @@
+/* Say how cringe is using outdated software */
+"2010webAppCringe" = "Using 2010 web app? Kinda cringe.";
+
+/* Tell how fast this API is */
+"apiFast" = "Like really, the API used by this app is up to 90x faster than original webpage with schedule.";
+
+/* Say that app has been translated into many languages */
+"appTranslateForCommunityByCommunity" = "This app has been translated to many languages btw.";
+
 /* No comment provided by engineer. */
 "Dodaj grupę" = "Add group";
 
 /* No comment provided by engineer. */
 "Nazwa grupy" = "Group name";
+
+/* Say how timezones work */
+"timezoneAwareDesciption" = "This app is timezone aware - that means, it will detect timezone change and add offset to the times of scheduled classes.";
 
 /* No comment provided by engineer. */
 "Wyczyść UserDefaults" = "Clear UserDefaults";

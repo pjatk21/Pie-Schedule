@@ -1,17 +1,17 @@
+/* Say how cringe is using outdated software */
+"2010webAppCringe" = "Używanie tej słabej stronki z 2010, kinda cringe.";
+
 /* No comment provided by engineer. */
 "About" = "O Aplikacji";
 
 /* No comment provided by engineer. */
 "Add group" = "Dodaj grupę";
 
-/* No comment provided by engineer. */
-"All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard." = "Wszystkie daty i godziny zawierają odpowiednie przesunięcie uwzględniające zmiany strefy czasowej.";
+/* Tell how fast this API is */
+"apiFast" = "API wykorzystane w tej aplikacji jest nawet 90x szybsze od stronki z planem zajęć.";
 
-/* No comment provided by engineer. */
-"API response times are even 90x faster compared to the response time of orginal web service." = "Czasy odpowiedzi API są nawet 90x krótsze w porównaniu z odpowiedziami oryginalnej strony. ";
-
-/* No comment provided by engineer. */
-"App has been translated to the multiple languages, thanks to: community." = "Aplikacja została przetłumaczona na różne języki podziękowania dla społeczności.";
+/* Say that app has been translated into many languages */
+"appTranslateForCommunityByCommunity" = "Aplikacja jest dostępna w różnych językach.";
 
 /* No comment provided by engineer. */
 "Date" = "Dzień";
@@ -26,22 +26,22 @@
 "Fast as ****" = "Szybki skurczybyk";
 
 /* No comment provided by engineer. */
-"Forget about that web app from 2010." = "Zapomnij o tej stronce z 2010.";
-
-/* No comment provided by engineer. */
 "Github repo" = "Repo na Githubie";
 
 /* No comment provided by engineer. */
+"Group name" = "Nazwa grupy";
+
+/* No comment provided by engineer. */
 "Groups" = "Grupy";
+
+/* No comment provided by engineer. */
+"Made with ❤️ by Chris" = "Zrobione z ❤️ przez Krystiana";
 
 /* No comment provided by engineer. */
 "Nazwa grupy" = "Nazwa grupy";
 
 /* No comment provided by engineer. */
 "Pie Schedule is fast!" = "Pie Schedule jest szybki";
-
-/* No comment provided by engineer. */
-"Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧" = "🇵🇱🇺🇦🇬🇧";
 
 /* No comment provided by engineer. */
 "Polyglot" = "Poliglota";
@@ -54,6 +54,9 @@
 
 /* No comment provided by engineer. */
 "Timezone aware" = "Świadomy stref czasowych";
+
+/* Say how timezones work */
+"timezoneAwareDesciption" = "Aplikacja automatycznie przelicza czas rozpoczęcia zajęć, jeżeli w twoim telefonie zmieni się strefa czasowa. So crazy!";
 
 /* No comment provided by engineer. */
 "Version: %@" = "Wersja: %@";

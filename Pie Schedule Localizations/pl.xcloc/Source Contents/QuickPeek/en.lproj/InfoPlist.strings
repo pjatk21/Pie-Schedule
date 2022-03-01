@@ -1,0 +1,6 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "QuickPeek";
+/* Bundle name */
+"CFBundleName" = "QuickPeekExtension";
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "";

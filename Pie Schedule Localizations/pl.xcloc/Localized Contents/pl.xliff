@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="en.lproj/Pie-Schedule-InfoPlist.strings" datatype="plaintext" source-language="en" target-language="pl">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Pie Schedule</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
   <file original="Pie Schedule/en.lproj/Localizable.strings" source-language="en" target-language="pl" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
-      <trans-unit id="API response times are even 90x faster compared to the response time of orginal web service." xml:space="preserve">
-        <source>API response times are even 90x faster compared to the response time of orginal web service.</source>
-        <target>Czasy odpowiedzi API są nawet 90x krótsze w porównaniu z odpowiedziami oryginalnej strony. </target>
+      <trans-unit id="%@" xml:space="preserve">
+        <source>%@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="2010webAppCringe" xml:space="preserve">
+        <source>2010webAppCringe</source>
+        <target>Używanie tej słabej stronki z 2010, kinda cringe.</target>
+        <note>Say how cringe is using outdated software</note>
+      </trans-unit>
+      <trans-unit id="A" xml:space="preserve">
+        <source>A</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="About" xml:space="preserve">
@@ -15,19 +34,17 @@
         <target>O Aplikacji</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add" xml:space="preserve">
+        <source>Add</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add group" xml:space="preserve">
         <source>Add group</source>
         <target>Dodaj grupę</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard." xml:space="preserve">
-        <source>All dates and times has timezone offset, so you don't have to count it all the time, when you are aboard.</source>
-        <target>Wszystkie daty i godziny zawierają odpowiednie przesunięcie uwzględniające zmiany strefy czasowej.</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="App has been translated to the multiple languages, thanks to: community." xml:space="preserve">
-        <source>App has been translated to the multiple languages, thanks to: community.</source>
-        <target>Aplikacja została przetłumaczona na różne języki podziękowania dla społeczności.</target>
+      <trans-unit id="B" xml:space="preserve">
+        <source>B</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Date" xml:space="preserve">
@@ -50,19 +67,24 @@
         <target>Szybki skurczybyk</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Forget about that web app from 2010." xml:space="preserve">
-        <source>Forget about that web app from 2010.</source>
-        <target>Zapomnij o tej stronce z 2010.</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
         <source>Github repo</source>
         <target>Repo na Githubie</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Group name" xml:space="preserve">
+        <source>Group name</source>
+        <target>Nazwa grupy</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Groups" xml:space="preserve">
         <source>Groups</source>
         <target>Grupy</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Made with ❤️ by Chris" xml:space="preserve">
+        <source>Made with ❤️ by Chris</source>
+        <target>Zrobione z ❤️ przez Krystiana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Nazwa grupy" xml:space="preserve">
@@ -73,11 +95,6 @@
       <trans-unit id="Pie Schedule is fast!" xml:space="preserve">
         <source>Pie Schedule is fast!</source>
         <target>Pie Schedule jest szybki</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧" xml:space="preserve">
-        <source>Pie Schedule is multilingual 🇵🇱🇺🇦🇬🇧</source>
-        <target>🇵🇱🇺🇦🇬🇧</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Polyglot" xml:space="preserve">
@@ -120,16 +137,79 @@
         <target>Zatwierdź</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="apiFast" xml:space="preserve">
+        <source>apiFast</source>
+        <target>API wykorzystane w tej aplikacji jest nawet 90x szybsze od stronki z planem zajęć.</target>
+        <note>Tell how fast this API is</note>
+      </trans-unit>
+      <trans-unit id="appTranslateForCommunityByCommunity" xml:space="preserve">
+        <source>appTranslateForCommunityByCommunity</source>
+        <target>Aplikacja jest dostępna w różnych językach.</target>
+        <note>Say that app has been translated into many languages</note>
+      </trans-unit>
+      <trans-unit id="timezoneAwareDesciption" xml:space="preserve">
+        <source>timezoneAwareDesciption</source>
+        <target>Aplikacja automatycznie przelicza czas rozpoczęcia zajęć, jeżeli w twoim telefonie zmieni się strefa czasowa. So crazy!</target>
+        <note>Say how timezones work</note>
+      </trans-unit>
+      <trans-unit id="🇵🇱🇺🇦🇬🇧" xml:space="preserve">
+        <source>🇵🇱🇺🇦🇬🇧</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
     </body>
   </file>
-  <file original="Pie Schedule/en.lproj/Pie Schedule-InfoPlist.strings" datatype="plaintext" source-language="en" target-language="pl">
+  <file original="QuickPeek/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="pl">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
+      <trans-unit id="CFBundleDisplayName" xml:space="preserve">
+        <source>QuickPeek</source>
+        <note>Bundle display name</note>
+      </trans-unit>
       <trans-unit id="CFBundleName" xml:space="preserve">
-        <source>Pie Schedule</source>
+        <source>QuickPeekExtension</source>
         <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
+        <source/>
+        <note>Copyright (human-readable)</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="QuickPeek/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="pl">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
+    </header>
+    <body>
+      <trans-unit id="%lld days until" xml:space="preserve">
+        <source>%lld days until</source>
+        <target>%lld dni do</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Next:" xml:space="preserve">
+        <source>Next:</source>
+        <target>Następne:</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No classes on the horizon 😎" xml:space="preserve">
+        <source>No classes on the horizon 😎</source>
+        <target>Brak zajęć na horyzoncie 😎</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Quick peek" xml:space="preserve">
+        <source>Quick peek</source>
+        <target>Szybki podgląd</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Quick peek on your schedule." xml:space="preserve">
+        <source>Quick peek on your schedule.</source>
+        <target>Szybki podgląd na twój plan zajęć.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="🤔" xml:space="preserve">
+        <source>🤔</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>
   </file>
