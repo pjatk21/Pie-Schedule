@@ -103,6 +103,7 @@
 		619181B727CCF0C400DC265A /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		61A7390927C4333200B1D4F5 /* AltapiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltapiManager.swift; sourceTree = "<group>"; };
 		61A7391A27C44E4800B1D4F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		61CD380C27CEA66500E79016 /* Pie-Schedule-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Pie-Schedule-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +181,7 @@
 		6142E72C27C404B2008C357C /* Pie Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				61CD380C27CEA66500E79016 /* Pie-Schedule-Info.plist */,
 				6110098627CE4AF8008894D7 /* Pie Schedule.entitlements */,
 				619181B327CCEBC100DC265A /* Localizable.strings */,
 				611B6D5B27C4D2ED00A143AB /* Views */,
@@ -600,6 +602,7 @@
 				DEVELOPMENT_TEAM = 4FMVLVPJGA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pie-Schedule-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -634,6 +637,7 @@
 				DEVELOPMENT_TEAM = 4FMVLVPJGA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pie-Schedule-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
