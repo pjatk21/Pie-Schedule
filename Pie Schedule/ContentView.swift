@@ -58,6 +58,7 @@ struct ContentView: View {
     ]
 }
 
+/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleEntry.preloadPreview()
@@ -65,3 +66,4 @@ struct ContentView_Previews: PreviewProvider {
             .environment(\.realmConfiguration, Realm.Configuration(deleteRealmIfMigrationNeeded: true))
     }
 }
+*/

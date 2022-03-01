@@ -13,7 +13,7 @@ struct PieScheduleApp: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.realmConfiguration, Realm.Configuration(deleteRealmIfMigrationNeeded: true))
+                .environment(\.realmConfiguration, .prodConfig)
         }
     }
 }
