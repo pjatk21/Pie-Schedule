@@ -17,3 +17,16 @@ extension Realm.Configuration {
         return Realm.Configuration(fileURL: realmLocation, deleteRealmIfMigrationNeeded: true)
     }()
 }
+
+extension Realm {
+    static let previews: Realm = {
+        let realm = try! Realm(configuration: .previewConfig)
+        let group = ScheduleGroup()
+        group.raw = "WIs I.2 - 46c"
+        try! realm.write {
+            realm.add(group)
+            realm.add(ScheduleEntry.loremIpsum)
+        }
+        return realm
+    }()
+}

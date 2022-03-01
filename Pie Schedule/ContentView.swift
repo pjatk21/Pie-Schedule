@@ -59,12 +59,9 @@ struct ContentView: View {
     ]
 }
 
-/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleEntry.preloadPreview()
-        return ContentView(activeDate: Date(year: 2022, month: 3, day: 7, hour: 0, minute: 0))
-            .environment(\.realmConfiguration, Realm.Configuration(deleteRealmIfMigrationNeeded: true))
+        ContentView(activeDate: .now)
+            .environment(\.realm, .previews)
     }
 }
-*/

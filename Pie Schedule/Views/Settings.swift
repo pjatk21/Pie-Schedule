@@ -85,10 +85,17 @@ struct SettingsGroupAdd: View {
     }
 }
 
-/*
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
-        Settings()
+        NavigationView {
+            Settings()
+                .environment(\.realm, .previews)
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        NavigationView {
+            SettingsGroupAdd()
+                .environment(\.realm, .previews)
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
-*/
