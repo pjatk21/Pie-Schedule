@@ -27,29 +27,16 @@ class ScheduleEntry: Object, Codable, Identifiable {
     private enum CodingKeys: String, CodingKey {
         case begin, end, code, type, name, room, tutor, groups
     }
-}
-
-extension ScheduleEntry {
-    static var previewsPopulated: Bool {
-        do {
-            let realm = try Realm(configuration: .init(deleteRealmIfMigrationNeeded: true))
-            let entries = realm.objects(ScheduleEntry.self)
-            return entries.count > 0
-        } catch {
-            return false
-        }
-    }
     
-    static func preloadPreview() {
-        do {
-            let realm = try Realm(configuration: .init(deleteRealmIfMigrationNeeded: true))
-            let r = try JSONDecoder().decode(ScheduleEntryResponse.self, from: "{\"entries\":[]}".data(using: .utf8)!)
-            try! realm.write {
-                realm.deleteAll()
-                realm.add(r.entries)
-            }
-        } catch {
-            return
-        }
-    }
+    static let loremIpsum: ScheduleEntry = {
+        let loremEntry = ScheduleEntry()
+        loremEntry.begin = Date()
+        loremEntry.end = loremEntry.begin + 90.minutes
+        loremEntry.name = "Tworzenie interfejsów w SwiftUI"
+        loremEntry.code = "TIS"
+        loremEntry.tutor = "Krystian Postek" // I wish
+        loremEntry.room = "A/357"
+        loremEntry.groups.append("WIs I.2 - 46c")
+        return loremEntry
+    }()
 }
