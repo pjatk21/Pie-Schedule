@@ -35,6 +35,7 @@
 		6142E73F27C4058D008C357C /* ScheduleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E73E27C4058D008C357C /* ScheduleGroup.swift */; };
 		6142E74627C40966008C357C /* ScheduleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E74527C40966008C357C /* ScheduleEntry.swift */; };
 		6142E74927C40C82008C357C /* ScheduleEntryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */; };
+		6153ADDC27CFB28100532ABF /* AvailableGroupsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153ADDB27CFB28100532ABF /* AvailableGroupsResponse.swift */; };
 		619181B527CCEBC100DC265A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 619181B327CCEBC100DC265A /* Localizable.strings */; };
 		61A7390A27C4333200B1D4F5 /* AltapiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A7390927C4333200B1D4F5 /* AltapiManager.swift */; };
 		61A7391727C447F700B1D4F5 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 61A7391627C447F700B1D4F5 /* SwiftDate */; };
@@ -100,6 +101,7 @@
 		6142E73E27C4058D008C357C /* ScheduleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGroup.swift; sourceTree = "<group>"; };
 		6142E74527C40966008C357C /* ScheduleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntry.swift; sourceTree = "<group>"; };
 		6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntryResponse.swift; sourceTree = "<group>"; };
+		6153ADDB27CFB28100532ABF /* AvailableGroupsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableGroupsResponse.swift; sourceTree = "<group>"; };
 		619181B427CCEBC100DC265A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		619181B627CCEBD600DC265A /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		619181B727CCF0C400DC265A /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				6142E74827C40C82008C357C /* ScheduleEntryResponse.swift */,
+				6153ADDB27CFB28100532ABF /* AvailableGroupsResponse.swift */,
 			);
 			path = "Altapi responses";
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				611B6D5D27C4D2F600A143AB /* Settings.swift in Sources */,
 				6142E73027C404B2008C357C /* ContentView.swift in Sources */,
 				6142E72E27C404B2008C357C /* PieScheduleApp.swift in Sources */,
+				6153ADDC27CFB28100532ABF /* AvailableGroupsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,17 +62,9 @@ struct Settings: View {
 
 struct SettingsGroupAdd: View {
     @State private var groupName: String = ""
-    @State private var prefix: String = "WIs"
-    @State private var semester: String = "I.1"
+    @State private var availableGroups: [String] = []
     @Environment(\.realm) private var realm: Realm
     @Environment(\.dismiss) private var dismiss
-    
-    private var prefixes = ["WIs", "WIn"]
-    private var semesters: [String] = {
-        (1...7).map {
-            "I.\($0)"
-        }
-    }()
     
     var body: some View {
         Form {
@@ -89,32 +81,48 @@ struct SettingsGroupAdd: View {
             }
             .disabled(!isValid())
             Section {
-                VStack {
-                    Picker(selection: $prefix, label: Text("A")) {
-                        ForEach(0..<prefixes.count) {
-                            Text(prefixes[$0]).tag(prefixes[$0])
-                        }
-                    }.pickerStyle(.segmented)
-                    Picker(selection: $semester, label: Text("B")) {
-                        ForEach(0..<semesters.count) {
-                            Text(semesters[$0]).tag(semesters[$0])
-                        }
-                    }.pickerStyle(.segmented)
+                NavigationLink(destination: SettingsGroupSearchablePicker(selectedGroup: $groupName, searchQuery: "", filteredGroups: availableGroups, availableGroups: availableGroups)) {
+                    Label("Select group", systemImage: "person.3.fill")
                 }
             }
         }
         .navigationTitle("Add group")
-        .onChange(of: prefix, perform: { _ in updateGroupName() })
-        .onChange(of: semester, perform: { _ in updateGroupName() })
-        .onAppear(perform: updateGroupName)
+        .task {
+            availableGroups = try! await AltapiManager().getAvailableGroups().groupsAvailable
+        }
     }
     
     private func isValid() -> Bool {
         return groupName.range(of: "^W", options: .regularExpression) != nil && groupName.range(of: "\\d+[a-z]", options: .regularExpression) != nil
     }
+}
+
+struct SettingsGroupSearchablePicker: View {
+    @Environment(\.dismiss) private var dismiss
+    @Binding var selectedGroup: String
+    @State var searchQuery: String
+    @State var filteredGroups: [String]
+    let availableGroups: [String]
     
-    private func updateGroupName() {
-        groupName = "\(prefix) \(semester) - "
+    var body: some View {
+        List(filteredGroups, id: \.self) { groupName in
+            Button(groupName) {
+                selectedGroup = groupName
+                dismiss.callAsFunction()
+            }
+            .buttonStyle(.plain)
+        }
+        .searchable(text: $searchQuery)
+        .navigationTitle("Select group")
+        .onChange(of: searchQuery) { _ in
+            filteredGroups = filterGroups()
+        }
+    }
+    
+    private func filterGroups() -> [String] {
+        searchQuery.isEmpty ? availableGroups.sorted() : availableGroups.filter {
+            $0.contains(searchQuery)
+        }.sorted()
     }
 }
 

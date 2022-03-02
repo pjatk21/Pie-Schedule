@@ -24,16 +24,6 @@ class AltapiManager {
         let url = baseUrl.appendingPathComponent("public/timetable/date/\(dateString)")
         var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         
-        if realm.objects(ScheduleGroup.self).count == 0 {
-            let a = ScheduleGroup()
-            a.raw = "WIs I.2 - 46c"
-            let b = ScheduleGroup()
-            b.raw = "WIs I.2 - 1w"
-            try realm.write {
-                realm.add([a, b])
-            }
-        }
-        
         
         urlComp.queryItems = realm.objects(ScheduleGroup.self).map {
             URLQueryItem(name: "groups", value: $0.raw)
@@ -72,5 +62,11 @@ class AltapiManager {
         }
         
         return result
+    }
+    
+    func getAvailableGroups() async throws -> AvailableGroupsResponse {
+        let url = baseUrl.appendingPathComponent("public/timetable/groups")
+        let (data, _) = try await urlSession.data(from: url)
+        return (try? JSONDecoder().decode(AvailableGroupsResponse.self, from: data)) ?? AvailableGroupsResponse(groupsAvailable: ["WIs I.2 - 46c"])
     }
 }
