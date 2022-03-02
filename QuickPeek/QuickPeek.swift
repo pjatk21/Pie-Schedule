@@ -34,7 +34,7 @@ struct Provider: IntentTimelineProvider {
         if entries.count == 0 {
             let nextActivity = realm.objects(ScheduleEntry.self).where {
                 $0.begin >= Date()
-            }.first
+            }.reversed().first
             entries.append(QuickPeekEntry(date: .now, configuration: configuration, data: nextActivity, noNearActivities: true))
         }
 
