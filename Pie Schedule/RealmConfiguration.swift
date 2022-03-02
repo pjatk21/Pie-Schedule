@@ -22,7 +22,7 @@ extension Realm {
     static let previews: Realm = {
         let realm = try! Realm(configuration: .previewConfig)
         let group = ScheduleGroup()
-        group.raw = "WIs I.2 - 46c"
+        group.name = "WIs I.2 - 46c"
         try! realm.write {
             realm.add(group)
             realm.add(ScheduleEntry.loremIpsum)

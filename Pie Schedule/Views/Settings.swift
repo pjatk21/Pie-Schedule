@@ -21,7 +21,7 @@ struct Settings: View {
                     }
                     List {
                         ForEach(groups) {
-                            Text($0.raw)
+                            Text($0.name)
                         }
                         .onDelete(perform: deleteHandler)
                     }
@@ -52,7 +52,7 @@ struct Settings: View {
             try! realm.write {
                 realm.delete(
                     realm.objects(ScheduleGroup.self).where {
-                        $0.raw.equals(groups[i].raw)
+                        $0.name.equals(groups[i].name)
                     }
                 )
             }
@@ -71,7 +71,7 @@ struct SettingsGroupAdd: View {
             TextField("Group name", text: $groupName)
             Button {
                 let sg = ScheduleGroup()
-                sg.raw = groupName
+                sg.name = groupName
                 try! realm.write {
                     realm.add(sg)
                 }

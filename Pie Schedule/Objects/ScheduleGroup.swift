@@ -8,10 +8,11 @@
 import RealmSwift
 
 class ScheduleGroup: Object, Codable, Identifiable {
-    @Persisted var raw: String
+    @Persisted var name: String
+    @Persisted var assingned = false
     
     var id: String {
-        raw
+        name
     }
 }
 
@@ -22,9 +23,9 @@ extension ScheduleGroup {
             // clear groups
             let groups = realm.objects(ScheduleGroup.self)
             let a = ScheduleGroup()
-            a.raw = "WIs I.2 - 46c"
+            a.name = "WIs I.2 - 46c"
             let b = ScheduleGroup()
-            b.raw = "WIs I.2 - 1w"
+            b.name = "WIs I.2 - 1w"
             try! realm.write {
                 realm.delete(groups)
                 realm.add(a)
