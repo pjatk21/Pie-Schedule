@@ -10,13 +10,16 @@ import RealmSwift
 import SwiftDate
 
 class AltapiManager {
-    private let urlSession = URLSession(configuration: .default)
+    private let urlSession: URLSession
     private let baseUrl = URL(string: "https://altapi.kpostek.dev/")!
     private var realm: Realm
     
-    init(realmConfig: Realm.Configuration = .prodConfig) {
+    init(urlSessionConfig: URLSessionConfiguration = .default, realmConfig: Realm.Configuration = .prodConfig) {
         realm = try! Realm(configuration: realmConfig)
+        urlSession = URLSession(configuration: urlSessionConfig)
     }
+    
+    static let backgroundMode = AltapiManager(urlSessionConfig: .background(withIdentifier: BackgroundTasks.refreshTaskId))
     
     func updateEntries(for date: Date) async throws -> ScheduleEntryResponse? {
         // create url and query

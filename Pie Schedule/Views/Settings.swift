@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import BackgroundTasks
 
 struct Settings: View {
     @ObservedResults(ScheduleGroup.self) var groups: Results<ScheduleGroup>
@@ -31,6 +32,9 @@ struct Settings: View {
                 Section("Developer") {
                     Button("Clear UserDefaults") {
                         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                    }
+                    Button("Cancel all tasks requests") {
+                        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: BackgroundTasks.refreshTaskId)
                     }
                 }
                 #endif
