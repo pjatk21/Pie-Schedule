@@ -29,7 +29,7 @@ struct Settings: View {
                 
                 #if DEBUG
                 Section("Developer") {
-                    Button("Wyczyść UserDefaults") {
+                    Button("Clear UserDefaults") {
                         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
                     }
                 }
