@@ -28,16 +28,18 @@ struct Provider: IntentTimelineProvider {
         }
         
         var entries: [QuickPeekEntry] = dataEntries.sorted(by: \.begin).map { entry in
-            QuickPeekEntry(date: entry.begin, configuration: configuration, data: entry)
+            let isInClass = entry.begin >= Date() && entry.end < Date()
+            return QuickPeekEntry(date: entry.begin, configuration: configuration, data: entry, mode: isInClass ? .inClass : .beforeClasses)
         }
         
         if entries.count == 0 {
+            // enable vacation mode
             let nextActivity = realm.objects(ScheduleEntry.self).where {
                 $0.begin >= Date()
             }.sorted {
                 $0.begin < $1.begin
             }.first
-            entries.append(QuickPeekEntry(date: .now, configuration: configuration, data: nextActivity, noNearActivities: true))
+            entries.append(QuickPeekEntry(date: .now, configuration: configuration, data: nextActivity, mode: .vacation))
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -45,11 +47,39 @@ struct Provider: IntentTimelineProvider {
     }
 }
 
+enum QuickPeekMode {
+    case beforeClasses, inClass, vacation, placeholder
+}
+
 struct QuickPeekEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     var data: ScheduleEntry? = nil
-    var noNearActivities: Bool = false
+    var mode: QuickPeekMode = .placeholder
+    
+    var timeLeftToEnd: String? {
+        guard let entry = data else {
+            return nil
+        }
+        
+        guard mode == .inClass else {
+            return nil
+        }
+        
+        return (Date.now..<entry.end).formatted(.components(style: .abbreviated, fields: [.minute, .hour]))
+    }
+    
+    var timeLeftVacations: String? {
+        guard let entry = data else {
+            return nil
+        }
+        
+        guard mode == .vacation else {
+            return nil
+        }
+        
+        return (Date.now..<entry.begin).formatted(.components(style: .wide, fields: [.month, .week, .day]))
+    }
 }
 
 struct QuickPeekEntryView : View {
@@ -61,8 +91,9 @@ struct QuickPeekEntryView : View {
     }
 
     var body: some View {
-        if entry.noNearActivities {
-            if let scheduleEntry = entry.data {
+        switch (entry.mode) {
+        case .vacation:
+            if let vacationTime = entry.timeLeftVacations {
                 VStack(alignment: .leading) {
                     Text("No classes on the horizon 😎")
                         .font(.system(size: 14))
@@ -70,12 +101,12 @@ struct QuickPeekEntryView : View {
                         .opacity(0.8)
                     Spacer()
                         .frame(height: 20.0)
-                    Text("\(daysLeft(scheduleEntry)) days until")
-                    Text(scheduleEntry.begin.formatted(date: .abbreviated, time: .omitted))
+                    Text("\(vacationTime) left")
+                    Text(entry.data!.begin.formatted(date: .abbreviated, time: .omitted))
                 }
                 .padding()
             }
-        } else {
+        case .beforeClasses:
             if let scheduleEntry = entry.data {
                 VStack(alignment: .leading) {
                     Text("Next:")
@@ -88,9 +119,19 @@ struct QuickPeekEntryView : View {
                         .font(.system(size: 12))
                 }
                 .padding()
-            } else {
-                PlaceholerView()
             }
+        case .inClass:
+            if let remaining = entry.timeLeftToEnd {
+                VStack(alignment: .leading) {
+                    Text("Remaining time:")
+                        .font(.system(size: 14))
+                    Text(remaining)
+                        .font(.system(size: 32, weight: .bold, design: .rounded))
+                }
+                .padding()
+            }
+        default:
+            PlaceholerView()
         }
     }
 }
@@ -98,11 +139,9 @@ struct QuickPeekEntryView : View {
 struct PlaceholerView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Next:")
-                .font(.system(size: 12))
             Text("🤔")
-                .font(.system(size: 28, weight: .bold, design: .rounded))
-                .opacity(0.4)
+                .font(.system(size: 34, weight: .bold, design: .rounded))
+                .opacity(0.2)
         }
         .padding()
     }
@@ -124,9 +163,11 @@ struct QuickPeek: Widget {
 
 struct QuickPeek_Previews: PreviewProvider {
     static var previews: some View {
-        QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent(), data: ScheduleEntry.loremIpsum))
+        QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent(), data: ScheduleEntry.loremIpsum, mode: .beforeClasses))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
-        QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent(), data: { let x = ScheduleEntry.loremIpsum; x.begin = x.begin + 12.days; return x }(), noNearActivities: true))
+        QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent(), data: ScheduleEntry.loremIpsum, mode: .inClass))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent(), data: { let x = ScheduleEntry.loremIpsum; x.begin = x.begin + 15.days; return x }(), mode: .vacation))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))

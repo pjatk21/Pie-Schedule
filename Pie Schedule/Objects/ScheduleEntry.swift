@@ -30,7 +30,7 @@ class ScheduleEntry: Object, Codable, Identifiable {
     
     static let loremIpsum: ScheduleEntry = {
         let loremEntry = ScheduleEntry()
-        loremEntry.begin = Date()
+        loremEntry.begin = Date() - 16.minutes
         loremEntry.end = loremEntry.begin + 90.minutes
         loremEntry.name = "Tworzenie interfejsów w SwiftUI"
         loremEntry.code = "TIS"
