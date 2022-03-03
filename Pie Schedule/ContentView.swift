@@ -17,7 +17,9 @@ struct ContentView: View {
     @Environment(\.realm) var realm: Realm
     @State var activeDate = Date().dateAtStartOf(.day)
     @AppStorage("first.launch") private var showSheet = true
-
+    @AppStorage("pref.autoskip") private var skipToNextDate = true
+    @AppStorage("pref.fetchSize") private var fetchSize = 7
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -43,11 +45,33 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(.stack)
-        .welcomeSheet(isPresented: $showSheet, onDismiss: {}, isSlideToDismissDisabled: false, pages: pages)
+        .welcomeSheet(isPresented: $showSheet, onDismiss: {}, isSlideToDismissDisabled: true, pages: pages)
+        .onAppear {
+            guard skipToNextDate else {
+                return
+            }
+            
+            if let newDate = nextDayWithClasses() {
+                activeDate = newDate
+            }
+        }
+        .task {
+            let _ = await updateScheduleInRange()
+        }
+    }
+    
+    func updateScheduleInRange() async -> ScheduleEntryResponse? {
+        return try! await altapi.updateEntries(from: .now.dateAtStartOf(.day), to: (Date() + fetchSize.days).dateAtEndOf(.day))
     }
 
     func entriesActive() -> Results<ScheduleEntry> {
         entries.where { $0.begin > activeDate && $0.begin < activeDate.dateAtEndOf(.day) }
+    }
+    
+    func nextDayWithClasses() -> Date? {
+        return realm.objects(ScheduleEntry.self).where {
+            $0.begin > Date().dateAtStartOf(.day)
+        }.sorted(by: \.begin).first?.begin.dateAtStartOf(.day)
     }
     
     private let pages = [

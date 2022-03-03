@@ -11,6 +11,8 @@ import RealmSwift
 struct Settings: View {
     @ObservedResults(ScheduleGroup.self) var groups: Results<ScheduleGroup>
     @Environment(\.realm) private var realm: Realm
+    @AppStorage("pref.autoskip") private var skipToNextDate = true
+    @AppStorage("pref.fetchSize") private var fetchSize = 7
     
     var body: some View {
         VStack {
@@ -20,10 +22,28 @@ struct Settings: View {
                         Label("Add group", systemImage: "plus")
                     }
                     List {
+                        ForEach(generateMissingGroupsWarnings(), id: \.self) {
+                            Text("⚠️" + $0)
+                        }
                         ForEach(groups) {
                             Text($0.name)
                         }
                         .onDelete(perform: deleteHandler)
+                    }
+                }
+                
+                Section("General preferences") {
+                    List {
+                        Toggle("Skip to next classes", isOn: $skipToNextDate)
+                        HStack {
+                            Text("Number of automaticly fetch days")
+                            Spacer()
+                            TextField("7", value: $fetchSize, formatter: NumberFormatter())
+                                .textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
+                                .frame(width: 30)
+                        }
+                        
                     }
                 }
                 
@@ -57,6 +77,36 @@ struct Settings: View {
                 )
             }
         }
+    }
+    
+    private enum GroupTypes: String {
+        case c, l, w
+    }
+    
+    private func generateMissingGroupsWarnings() -> [String] {
+        var groupCats = Set<GroupTypes>()
+        
+        for group in realm.objects(ScheduleGroup.self) {
+            if group.name.range(of: "c$", options: .regularExpression) != nil {
+                groupCats.insert(.c)
+            } else if group.name.range(of: "l$", options: .regularExpression) != nil {
+                groupCats.insert(.l)
+            } else if group.name.range(of: "w$", options: .regularExpression) != nil {
+                groupCats.insert(.w)
+            }
+        }
+        
+        var warnings = Array<String>()
+        if !groupCats.contains(.c) {
+            warnings.append(String(localized: "Missing exc. group!"))
+        }
+        if !groupCats.contains(.l) {
+            warnings.append(String(localized: "Missing lang. group!"))
+        }
+        if !groupCats.contains(.w) {
+            warnings.append(String(localized: "Missing lect. group!"))
+        }
+        return warnings
     }
 }
 
@@ -110,7 +160,7 @@ struct SettingsGroupSearchablePicker: View {
                 selectedGroup = groupName
                 dismiss.callAsFunction()
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.automatic)
         }
         .searchable(text: $searchQuery)
         .navigationTitle("Select group")
@@ -130,12 +180,13 @@ struct Settings_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             Settings()
-                .environment(\.realm, .previews)
+                .environment(\.realmConfiguration, .previewConfig)
                 .navigationBarTitleDisplayMode(.inline)
         }
+        
         NavigationView {
             SettingsGroupAdd()
-                .environment(\.realm, .previews)
+                .environment(\.realmConfiguration, .previewConfig)
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
