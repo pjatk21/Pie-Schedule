@@ -20,14 +20,14 @@
         <source>%@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="7" xml:space="preserve">
+        <source>7</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="2010webAppCringe" xml:space="preserve">
-        <source>2010webAppCringe</source>
+        <source>Using 2010 web app? Kinda cringe.</source>
         <target>Używanie tej słabej stronki z 2010, kinda cringe.</target>
         <note>Say how cringe is using outdated software</note>
-      </trans-unit>
-      <trans-unit id="A" xml:space="preserve">
-        <source>A</source>
-        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="About" xml:space="preserve">
         <source>About</source>
@@ -43,13 +43,8 @@
         <target>Dodaj grupę</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="B" xml:space="preserve">
-        <source>B</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Date" xml:space="preserve">
-        <source>Date</source>
-        <target>Dzień</target>
+      <trans-unit id="Clear UserDefaults" xml:space="preserve">
+        <source>Clear UserDefaults</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Developer" xml:space="preserve">
@@ -67,9 +62,17 @@
         <target>Szybki skurczybyk</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="General preferences" xml:space="preserve">
+        <source>General preferences</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
         <source>Github repo</source>
         <target>Repo na Githubie</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Go to settings" xml:space="preserve">
+        <source>Go to settings</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Group name" xml:space="preserve">
@@ -87,9 +90,33 @@
         <target>Zrobione z ❤️ przez Krystiana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Missing exc. group!" xml:space="preserve">
+        <source>Missing exc. group!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Missing lang. group!" xml:space="preserve">
+        <source>Missing lang. group!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Missing lect. group!" xml:space="preserve">
+        <source>Missing lect. group!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Nazwa grupy" xml:space="preserve">
         <source>Group name</source>
         <target>Nazwa grupy</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No classes for this day" xml:space="preserve">
+        <source>No classes for this day</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No groups configured!" xml:space="preserve">
+        <source>No groups configured!</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Number of automaticly fetch days" xml:space="preserve">
+        <source>Number of automaticly fetch days</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Pie Schedule is fast!" xml:space="preserve">
@@ -102,14 +129,26 @@
         <target>Poliglota</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Refresh" xml:space="preserve">
+        <source>Refresh</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
         <source>Schedule</source>
         <target>Plan zajęć</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Select group" xml:space="preserve">
+        <source>Select group</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Settings" xml:space="preserve">
         <source>Settings</source>
         <target>Ustawienia</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Skip to next classes" xml:space="preserve">
+        <source>Skip to next classes</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Timezone aware" xml:space="preserve">
@@ -138,17 +177,17 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="apiFast" xml:space="preserve">
-        <source>apiFast</source>
+        <source>Like really, the API used by this app is up to 90x faster than original webpage with schedule.</source>
         <target>API wykorzystane w tej aplikacji jest nawet 90x szybsze od stronki z planem zajęć.</target>
         <note>Tell how fast this API is</note>
       </trans-unit>
       <trans-unit id="appTranslateForCommunityByCommunity" xml:space="preserve">
-        <source>appTranslateForCommunityByCommunity</source>
+        <source>This app has been translated to many languages btw.</source>
         <target>Aplikacja jest dostępna w różnych językach.</target>
         <note>Say that app has been translated into many languages</note>
       </trans-unit>
       <trans-unit id="timezoneAwareDesciption" xml:space="preserve">
-        <source>timezoneAwareDesciption</source>
+        <source>This app is timezone aware - that means, it will detect timezone change and add offset to the times of scheduled classes.</source>
         <target>Aplikacja automatycznie przelicza czas rozpoczęcia zajęć, jeżeli w twoim telefonie zmieni się strefa czasowa. So crazy!</target>
         <note>Say how timezones work</note>
       </trans-unit>
@@ -177,7 +216,7 @@
       </trans-unit>
     </body>
   </file>
-  <file original="QuickPeek/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="pl">
+  <file original="QuickPeek/en.lproj/Localizable.strings" source-language="en" target-language="pl" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>

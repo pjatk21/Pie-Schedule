@@ -22,15 +22,15 @@
         <target>%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="7" xml:space="preserve">
+        <source>7</source>
+        <target>7</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="2010webAppCringe" xml:space="preserve">
-        <source>2010webAppCringe</source>
+        <source>Using 2010 web app? Kinda cringe.</source>
         <target>Using 2010 web app? Kinda cringe.</target>
         <note>Say how cringe is using outdated software</note>
-      </trans-unit>
-      <trans-unit id="A" xml:space="preserve">
-        <source>A</source>
-        <target>A</target>
-        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="About" xml:space="preserve">
         <source>About</source>
@@ -47,14 +47,9 @@
         <target>Add group</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="B" xml:space="preserve">
-        <source>B</source>
-        <target>B</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Date" xml:space="preserve">
-        <source>Date</source>
-        <target>Date</target>
+      <trans-unit id="Clear UserDefaults" xml:space="preserve">
+        <source>Clear UserDefaults</source>
+        <target>Clear UserDefaults</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Developer" xml:space="preserve">
@@ -72,9 +67,19 @@
         <target>Fast as ****</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="General preferences" xml:space="preserve">
+        <source>General preferences</source>
+        <target>General preferences</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
         <source>Github repo</source>
         <target>Github repo</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Go to settings" xml:space="preserve">
+        <source>Go to settings</source>
+        <target>Go to settings</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Group name" xml:space="preserve">
@@ -92,9 +97,39 @@
         <target>Made with ❤️ by Chris</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Missing exc. group!" xml:space="preserve">
+        <source>Missing exc. group!</source>
+        <target>Missing exc. group!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Missing lang. group!" xml:space="preserve">
+        <source>Missing lang. group!</source>
+        <target>Missing lang. group!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Missing lect. group!" xml:space="preserve">
+        <source>Missing lect. group!</source>
+        <target>Missing lect. group!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Nazwa grupy" xml:space="preserve">
         <source>Group name</source>
         <target>Group name</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No classes for this day" xml:space="preserve">
+        <source>No classes for this day</source>
+        <target>No classes for this day</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No groups configured!" xml:space="preserve">
+        <source>No groups configured!</source>
+        <target>No groups configured!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Number of automaticly fetch days" xml:space="preserve">
+        <source>Number of automaticly fetch days</source>
+        <target>Number of automaticly fetch days</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Pie Schedule is fast!" xml:space="preserve">
@@ -107,14 +142,29 @@
         <target>Polyglot</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Refresh" xml:space="preserve">
+        <source>Refresh</source>
+        <target>Refresh</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
         <source>Schedule</source>
         <target>Schedule</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Select group" xml:space="preserve">
+        <source>Select group</source>
+        <target>Select group</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Settings" xml:space="preserve">
         <source>Settings</source>
         <target>Settings</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Skip to next classes" xml:space="preserve">
+        <source>Skip to next classes</source>
+        <target>Skip to next classes</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Timezone aware" xml:space="preserve">
@@ -143,17 +193,17 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="apiFast" xml:space="preserve">
-        <source>apiFast</source>
+        <source>Like really, the API used by this app is up to 90x faster than original webpage with schedule.</source>
         <target>Like really, the API used by this app is up to 90x faster than original webpage with schedule.</target>
         <note>Tell how fast this API is</note>
       </trans-unit>
       <trans-unit id="appTranslateForCommunityByCommunity" xml:space="preserve">
-        <source>appTranslateForCommunityByCommunity</source>
+        <source>This app has been translated to many languages btw.</source>
         <target>This app has been translated to many languages btw.</target>
         <note>Say that app has been translated into many languages</note>
       </trans-unit>
       <trans-unit id="timezoneAwareDesciption" xml:space="preserve">
-        <source>timezoneAwareDesciption</source>
+        <source>This app is timezone aware - that means, it will detect timezone change and add offset to the times of scheduled classes.</source>
         <target>This app is timezone aware - that means, it will detect timezone change and add offset to the times of scheduled classes.</target>
         <note>Say how timezones work</note>
       </trans-unit>
