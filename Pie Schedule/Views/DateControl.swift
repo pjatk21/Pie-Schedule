@@ -22,8 +22,9 @@ struct DateControl: View {
                     .frame(width: 10)
                     .padding(.horizontal, 25.0)
             }
-            DatePicker(activeDate.toFormat("EEEE"), selection: $activeDate, displayedComponents: [.date])
+            DatePicker(dateFormatter.string(from: activeDate), selection: $activeDate, displayedComponents: [.date])
                 .datePickerStyle(DefaultDatePickerStyle())
+                .environment(\.locale, .autoupdatingCurrent)
             Button {
                 activeDate = activeDate + 1.days
             } label: {
@@ -34,5 +35,11 @@ struct DateControl: View {
                     .padding(.horizontal, 25.0)
             }
         }
+    }
+    
+    private var dateFormatter: DateFormatter {
+        let df = DateFormatter()
+        df.dateFormat = "EEEE"
+        return df
     }
 }
