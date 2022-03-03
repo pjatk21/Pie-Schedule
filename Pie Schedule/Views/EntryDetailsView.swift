@@ -23,6 +23,8 @@ struct EntryDetailsView: View {
 
 struct EntryDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryDetailsView(scheduleEntry: ScheduleEntry.loremIpsum)
+        NavigationView {
+            EntryDetailsView(scheduleEntry: ScheduleEntry.loremIpsum)
+        }
     }
 }
