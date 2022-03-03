@@ -27,14 +27,16 @@ struct Provider: IntentTimelineProvider {
             $0.begin >= Date() && $0.begin <= Date() + (configuration.vacationMinLength?.intValue.days ?? 3.days)
         }
         
-        var entries: [QuickPeekEntry] = dataEntries.map { entry in
+        var entries: [QuickPeekEntry] = dataEntries.sorted(by: \.begin).map { entry in
             QuickPeekEntry(date: entry.begin, configuration: configuration, data: entry)
-        }.reversed()
+        }
         
         if entries.count == 0 {
             let nextActivity = realm.objects(ScheduleEntry.self).where {
                 $0.begin >= Date()
-            }.reversed().first
+            }.sorted {
+                $0.begin < $1.begin
+            }.first
             entries.append(QuickPeekEntry(date: .now, configuration: configuration, data: nextActivity, noNearActivities: true))
         }
 
