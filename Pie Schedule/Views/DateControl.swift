@@ -22,7 +22,7 @@ struct DateControl: View {
                     .frame(width: 10)
                     .padding(.horizontal, 25.0)
             }
-            DatePicker("Date", selection: $activeDate, displayedComponents: [.date])
+            DatePicker(activeDate.toFormat("EEEE"), selection: $activeDate, displayedComponents: [.date])
                 .datePickerStyle(DefaultDatePickerStyle())
             Button {
                 activeDate = activeDate + 1.days
