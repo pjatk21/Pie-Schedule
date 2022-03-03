@@ -6,60 +6,90 @@
 //
 
 import Foundation
-import RealmSwift
+@preconcurrency import RealmSwift
 import SwiftDate
+import os.log
 
-class AltapiManager {
+class AltapiManager: ObservableObject {
     private let urlSession = URLSession(configuration: .default)
     private let baseUrl = URL(string: "https://altapi.kpostek.dev/")!
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Altapi Manager")
     private var realm: Realm
     
     init(realmConfig: Realm.Configuration = .prodConfig) {
         realm = try! Realm(configuration: realmConfig)
     }
     
-    func updateEntries(for date: Date) async throws -> ScheduleEntryResponse? {
-        // create url and query
-        let dateString = date.toFormat("yyyy-MM-dd")
-        let url = baseUrl.appendingPathComponent("public/timetable/date/\(dateString)")
-        var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+    private func isoDateDecodingStrategy(decode: Decoder) throws -> Date {
+        let container = try decode.singleValueContainer()
+        let dateString = try container.decode(String.self)
         
+        if let date = dateString.toISODate() {
+            return date.date
+        }
+        
+        throw DecodingError.dataCorruptedError(in: container, debugDescription: "This string \(dateString) is not a valid ISO string.")
+    }
+    
+    var hasGroupsConfigured: Bool {
+        realm.objects(ScheduleGroup.self).count > 0
+    }
+    
+    private func sinkNewScheduleEntries(newEntries: [ScheduleEntry]) async throws {
+        let realmAsync = try await Realm(configuration: .prodConfig)
+        let newEntriesSorted = newEntries.sorted {
+            $0.begin < $1.begin
+        }
+        
+        // find data to replace
+        logger.debug("Removing entries from \(newEntriesSorted.first?.begin.toISO() ?? "???") to \(newEntriesSorted.last?.begin.toISO() ?? "???")")
+        let outdatedEntries = realm.objects(ScheduleEntry.self).where {
+            $0.begin >= newEntriesSorted.first?.begin ?? Date() && $0.begin <= newEntriesSorted.last?.begin ?? Date()
+        }
+        
+        try realmAsync.write {
+            realmAsync.delete(outdatedEntries)
+            realmAsync.add(newEntriesSorted)
+        }
+    }
+    
+    func updateEntries(for date: Date) async throws -> ScheduleEntryResponse? {
+        return try await self.updateEntries(from: date.dateAtStartOf(.day), to: date.dateAtEndOf(.day))
+    }
+    
+    func updateEntries(from begin: Date, to end: Date) async throws -> ScheduleEntryResponse? {
+        // Prevent unwanted fetch of whole schedule
+        guard hasGroupsConfigured else {
+            return .init(entries: [])
+        }
+        
+        // Create query
+        let url = baseUrl.appendingPathComponent("public/timetable/range")
+        var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         
         urlComp.queryItems = realm.objects(ScheduleGroup.self).map {
             URLQueryItem(name: "groups", value: $0.name)
         }
+        
+        urlComp.queryItems?.append(
+            URLQueryItem(name: "from", value: begin.toISO())
+        )
+        urlComp.queryItems?.append(
+            URLQueryItem(name: "to", value: end.toISO())
+        )
+        
+        // Perform request
         guard let urlFinal = urlComp.url else { return nil }
-        print(urlFinal)
+        logger.notice("Query is \(urlFinal)")
         
-        // remove old data
-        let outdated = realm.objects(ScheduleEntry.self).where {
-            $0.begin > date.date && $0.begin < date.dateAtEndOf(.day).date
-        }
-        try realm.write {
-            realm.delete(outdated)
-        }
-        
-        // save new data
         let (data, _) = try await urlSession.data(from: urlFinal)
         
-        // Funny thing, Apple uses ISO8601 without seconds fractions, how cruel...
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .custom({ decode in
-            let container = try decode.singleValueContainer()
-            let dateString = try container.decode(String.self)
-            
-            if let date = dateString.toISODate() {
-                return date.date
-            }
-            
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "This string \(dateString) is not a valid ISO string.")
-        })
+        decoder.dateDecodingStrategy = .custom(self.isoDateDecodingStrategy)
         
+        // Save data to realm
         let result = try decoder.decode(ScheduleEntryResponse.self, from: data)
-        let realmAsync = try await Realm(configuration: .prodConfig)
-        try realmAsync.write {
-            realmAsync.add(result.entries)
-        }
+        try await self.sinkNewScheduleEntries(newEntries: result.entries)
         
         return result
     }

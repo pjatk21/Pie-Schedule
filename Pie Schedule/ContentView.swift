@@ -11,10 +11,9 @@ import SwiftUI
 import WelcomeSheet
 
 struct ContentView: View {
-    private let altapi = AltapiManager()
-
     @ObservedResults(ScheduleEntry.self) var entries
     @Environment(\.realm) var realm: Realm
+    @Environment(\.altapi) var altapi: AltapiManager
     @State var activeDate = Date().dateAtStartOf(.day)
     @AppStorage("first.launch") private var showSheet = true
     @AppStorage("pref.autoskip") private var skipToNextDate = true
@@ -24,14 +23,49 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 DateControl(activeDate: $activeDate)
-                List(entriesActive()) { entry in
-                    NavigationLink(destination: EntryDetailsView(scheduleEntry: entry)) {
-                        EntryPreviewRow(entry: entry)
-                            .padding(.vertical)
+                if altapi.hasGroupsConfigured {
+                    if entriesActive().count > 0 {
+                        List(entriesActive()) { entry in
+                            NavigationLink(destination: EntryDetailsView(scheduleEntry: entry)) {
+                                EntryPreviewRow(entry: entry)
+                                    .padding(.vertical)
+                            }
+                        }
+                        .refreshable {
+                            let _ = try! await altapi.updateEntries(for: activeDate)
+                        }
+                    } else {
+                        List() {
+                            HStack {
+                                Spacer()
+                                Text("No classes for this day")
+                                    .opacity(0.4)
+                                Spacer()
+                            }
+                            .listRowBackground(Color.clear)
+                        }
+                        .refreshable {
+                            let _ = try! await altapi.updateEntries(for: activeDate)
+                        }
                     }
-                }
-                .refreshable {
-                    let _ = try! await altapi.updateEntries(for: activeDate)
+                } else {
+                    ScrollView {
+                        Text("No groups configured!")
+                            .padding()
+                            .font(.system(size: 24, weight: .light, design: .rounded))
+                            .opacity(0.4)
+                        NavigationLink(destination: Settings()) {
+                            Label("Go to settings", systemImage: "gearshape")
+                                .padding()
+                        }
+                        Button {
+                            Task {
+                                let _ = await updateScheduleInRange()
+                            }
+                        } label: {
+                            Label("Refresh", systemImage: "arrow.clockwise")
+                        }
+                    }
                 }
             }
             .navigationTitle("Schedule")
@@ -89,6 +123,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(activeDate: .now)
-            .environment(\.realm, .previews)
+            .environment(\.realmConfiguration, .previewConfig)
+            .environment(\.altapi, .init(realmConfig: .previewConfig))
     }
 }

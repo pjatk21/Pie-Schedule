@@ -9,7 +9,7 @@ import RealmSwift
 import Foundation
 
 extension Realm.Configuration {
-    static let previewConfig: Realm.Configuration = .init(inMemoryIdentifier: "preview")
+    static let previewConfig: Realm.Configuration = .init(inMemoryIdentifier: "previews", deleteRealmIfMigrationNeeded: true)
     static let devConfig: Realm.Configuration = .init(deleteRealmIfMigrationNeeded: true)
     static let prodConfig: Realm.Configuration = {
         var realmLocation = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.prov.kpostek.pieschedule")!
@@ -23,10 +23,14 @@ extension Realm {
         let realm = try! Realm(configuration: .previewConfig)
         let group = ScheduleGroup()
         group.name = "WIs I.2 - 46c"
-        try! realm.write {
-            realm.add(group)
-            realm.add(ScheduleEntry.loremIpsum)
+        do {
+            try realm.write {
+                realm.add(group)
+                realm.add(ScheduleEntry.loremIpsum)
+            }
+            return realm
+        } catch {
+            fatalError("Can't create preview realm \(error)")
         }
-        return realm
     }()
 }

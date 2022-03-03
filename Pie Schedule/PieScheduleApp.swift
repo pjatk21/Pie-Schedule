@@ -14,6 +14,18 @@ struct PieScheduleApp: SwiftUI.App {
         WindowGroup {
             ContentView()
                 .environment(\.realmConfiguration, .prodConfig)
+                .environment(\.altapi, .init())
         }
+    }
+}
+
+// MARK: - Altapi enviroment extension
+private struct AltapiEnvironmentKey: EnvironmentKey {
+    static let defaultValue = AltapiManager()
+}
+extension EnvironmentValues {
+    var altapi: AltapiManager {
+        get { self[AltapiEnvironmentKey.self] }
+        set { self[AltapiEnvironmentKey.self] = newValue }
     }
 }
