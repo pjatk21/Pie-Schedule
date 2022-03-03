@@ -206,8 +206,8 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
-      <trans-unit id="%lld days until" xml:space="preserve">
-        <source>%lld days until</source>
+      <trans-unit id="%@ left" xml:space="preserve">
+        <source>%@ left</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Next:" xml:space="preserve">
@@ -224,6 +224,10 @@
       </trans-unit>
       <trans-unit id="Quick peek on your schedule." xml:space="preserve">
         <source>Quick peek on your schedule.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Remaining time:" xml:space="preserve">
+        <source>Remaining time:</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="🤔" xml:space="preserve">

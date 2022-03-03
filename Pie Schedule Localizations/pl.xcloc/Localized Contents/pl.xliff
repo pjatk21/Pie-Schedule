@@ -36,6 +36,7 @@
       </trans-unit>
       <trans-unit id="Add" xml:space="preserve">
         <source>Add</source>
+        <target>Dodaj</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add group" xml:space="preserve">
@@ -45,6 +46,7 @@
       </trans-unit>
       <trans-unit id="Clear UserDefaults" xml:space="preserve">
         <source>Clear UserDefaults</source>
+        <target>Wyczyść UserDefaults</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Developer" xml:space="preserve">
@@ -64,6 +66,7 @@
       </trans-unit>
       <trans-unit id="General preferences" xml:space="preserve">
         <source>General preferences</source>
+        <target>Ustawienia ogólne</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
@@ -73,6 +76,7 @@
       </trans-unit>
       <trans-unit id="Go to settings" xml:space="preserve">
         <source>Go to settings</source>
+        <target>Przejdź do ustawień</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Group name" xml:space="preserve">
@@ -92,14 +96,17 @@
       </trans-unit>
       <trans-unit id="Missing exc. group!" xml:space="preserve">
         <source>Missing exc. group!</source>
+        <target>Brakuje grupy ćwiczeniowej!</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Missing lang. group!" xml:space="preserve">
         <source>Missing lang. group!</source>
+        <target>Brakuje grupy lektoratu!</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Missing lect. group!" xml:space="preserve">
         <source>Missing lect. group!</source>
+        <target>Brakuje grupy wykładowej!</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Nazwa grupy" xml:space="preserve">
@@ -109,14 +116,17 @@
       </trans-unit>
       <trans-unit id="No classes for this day" xml:space="preserve">
         <source>No classes for this day</source>
+        <target>Brak zajęć na ten dzień</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="No groups configured!" xml:space="preserve">
         <source>No groups configured!</source>
+        <target>Brak skonfigurowanych grup</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Number of automaticly fetch days" xml:space="preserve">
         <source>Number of automaticly fetch days</source>
+        <target>Liczba dni do automatycznego pobierania</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Pie Schedule is fast!" xml:space="preserve">
@@ -131,6 +141,7 @@
       </trans-unit>
       <trans-unit id="Refresh" xml:space="preserve">
         <source>Refresh</source>
+        <target>Odśwież</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
@@ -140,6 +151,7 @@
       </trans-unit>
       <trans-unit id="Select group" xml:space="preserve">
         <source>Select group</source>
+        <target>Wybierz grupę</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Settings" xml:space="preserve">
@@ -149,6 +161,7 @@
       </trans-unit>
       <trans-unit id="Skip to next classes" xml:space="preserve">
         <source>Skip to next classes</source>
+        <target>Przeskakuj do najbliższych zajęć</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Timezone aware" xml:space="preserve">
@@ -221,9 +234,9 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
-      <trans-unit id="%lld days until" xml:space="preserve">
-        <source>%lld days until</source>
-        <target>%lld dni do</target>
+      <trans-unit id="%@ left" xml:space="preserve">
+        <source>%@ left</source>
+        <target>%@ do</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Next:" xml:space="preserve">
@@ -244,6 +257,11 @@
       <trans-unit id="Quick peek on your schedule." xml:space="preserve">
         <source>Quick peek on your schedule.</source>
         <target>Szybki podgląd na twój plan zajęć.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Remaining time:" xml:space="preserve">
+        <source>Remaining time:</source>
+        <target>Pozostało:</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="🤔" xml:space="preserve">

@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-"%lld days until" = "%lld dni do";
+"%@ left" = "%@ do";
 
 /* No comment provided by engineer. */
 "Next:" = "Następne:";
@@ -12,4 +12,7 @@
 
 /* No comment provided by engineer. */
 "Quick peek on your schedule." = "Szybki podgląd na twój plan zajęć.";
+
+/* No comment provided by engineer. */
+"Remaining time:" = "Pozostało:";
 

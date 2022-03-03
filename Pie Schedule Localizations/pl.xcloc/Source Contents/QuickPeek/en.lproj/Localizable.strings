@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-"%lld days until" = "%lld days until";
+"%@ left" = "%@ left";
 
 /* No comment provided by engineer. */
 "🤔" = "🤔";
@@ -15,4 +15,7 @@
 
 /* No comment provided by engineer. */
 "Quick peek on your schedule." = "Quick peek on your schedule.";
+
+/* No comment provided by engineer. */
+"Remaining time:" = "Remaining time:";
 

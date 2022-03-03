@@ -5,6 +5,9 @@
 "About" = "O Aplikacji";
 
 /* No comment provided by engineer. */
+"Add" = "Dodaj";
+
+/* No comment provided by engineer. */
 "Add group" = "Dodaj grupę";
 
 /* Tell how fast this API is */
@@ -14,7 +17,7 @@
 "appTranslateForCommunityByCommunity" = "Aplikacja jest dostępna w różnych językach.";
 
 /* No comment provided by engineer. */
-"Date" = "Dzień";
+"Clear UserDefaults" = "Wyczyść UserDefaults";
 
 /* No comment provided by engineer. */
 "Developer" = "Programista";
@@ -26,7 +29,13 @@
 "Fast as ****" = "Szybki skurczybyk";
 
 /* No comment provided by engineer. */
+"General preferences" = "Ustawienia ogólne";
+
+/* No comment provided by engineer. */
 "Github repo" = "Repo na Githubie";
+
+/* No comment provided by engineer. */
+"Go to settings" = "Przejdź do ustawień";
 
 /* No comment provided by engineer. */
 "Group name" = "Nazwa grupy";
@@ -38,7 +47,25 @@
 "Made with ❤️ by Chris" = "Zrobione z ❤️ przez Krystiana";
 
 /* No comment provided by engineer. */
+"Missing exc. group!" = "Brakuje grupy ćwiczeniowej!";
+
+/* No comment provided by engineer. */
+"Missing lang. group!" = "Brakuje grupy lektoratu!";
+
+/* No comment provided by engineer. */
+"Missing lect. group!" = "Brakuje grupy wykładowej!";
+
+/* No comment provided by engineer. */
 "Nazwa grupy" = "Nazwa grupy";
+
+/* No comment provided by engineer. */
+"No classes for this day" = "Brak zajęć na ten dzień";
+
+/* No comment provided by engineer. */
+"No groups configured!" = "Brak skonfigurowanych grup";
+
+/* No comment provided by engineer. */
+"Number of automaticly fetch days" = "Liczba dni do automatycznego pobierania";
 
 /* No comment provided by engineer. */
 "Pie Schedule is fast!" = "Pie Schedule jest szybki";
@@ -47,10 +74,19 @@
 "Polyglot" = "Poliglota";
 
 /* No comment provided by engineer. */
+"Refresh" = "Odśwież";
+
+/* No comment provided by engineer. */
 "Schedule" = "Plan zajęć";
 
 /* No comment provided by engineer. */
+"Select group" = "Wybierz grupę";
+
+/* No comment provided by engineer. */
 "Settings" = "Ustawienia";
+
+/* No comment provided by engineer. */
+"Skip to next classes" = "Przeskakuj do najbliższych zajęć";
 
 /* No comment provided by engineer. */
 "Timezone aware" = "Świadomy stref czasowych";
