@@ -12,7 +12,7 @@ import os.log
 
 class AltapiManager: ObservableObject {
     private let urlSession = URLSession(configuration: .default)
-    private let baseUrl = URL(string: "https://altapi.kpostek.dev/")!
+    private let baseUrl = URL(string: "https://altapi.kpostek.dev/v1")!
     private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Altapi Manager")
     private var realm: Realm
     
@@ -64,7 +64,7 @@ class AltapiManager: ObservableObject {
         }
         
         // Create query
-        let url = baseUrl.appendingPathComponent("public/timetable/range")
+        let url = baseUrl.appendingPathComponent("timetable/range")
         var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         
         urlComp.queryItems = realm.objects(ScheduleGroup.self).map {
@@ -95,7 +95,7 @@ class AltapiManager: ObservableObject {
     }
     
     func getAvailableGroups() async throws -> AvailableGroupsResponse {
-        let url = baseUrl.appendingPathComponent("public/timetable/groups")
+        let url = baseUrl.appendingPathComponent("timetable/groups")
         let (data, _) = try await urlSession.data(from: url)
         return (try? JSONDecoder().decode(AvailableGroupsResponse.self, from: data)) ?? AvailableGroupsResponse(groupsAvailable: ["WIs I.2 - 46c"])
     }
