@@ -24,6 +24,10 @@ class ScheduleEntry: Object, Codable, Identifiable {
         _id.stringValue
     }
     
+    func isItRightNow(_ when: Date = .now) -> Bool {
+        when >= begin && when < end
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case begin, end, code, type, name, room, tutor, groups
     }

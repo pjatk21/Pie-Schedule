@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import WidgetKit
 
 struct BuildInfo: Codable {
     let branch: String
@@ -56,6 +57,9 @@ struct Settings: View {
                 Section("Developer") {
                     Button("Clear UserDefaults") {
                         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                    }
+                    Button("Reload widget timeline") {
+                        WidgetCenter.shared.reloadAllTimelines()
                     }
                 }
                 #endif

@@ -17,19 +17,19 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (QuickPeekEntry) -> ()) {
-        let entry = QuickPeekEntry(date: Date(), configuration: configuration, data: ScheduleEntry.loremIpsum)
+        let entry = QuickPeekEntry(date: Date(), configuration: configuration, data: ScheduleEntry.loremIpsum, mode: .beforeClasses)
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let realm = try! Realm(configuration: .prodConfig)
         let dataEntries = realm.objects(ScheduleEntry.self).where {
-            $0.begin >= Date() && $0.begin <= Date() + (configuration.vacationMinLength?.intValue.days ?? 3.days)
+            $0.end > .now && $0.begin <= Date() + (configuration.vacationMinLength?.intValue.days ?? 3.days)
         }
         
         var entries: [QuickPeekEntry] = dataEntries.sorted(by: \.begin).map { entry in
-            let isInClass = entry.begin >= Date() && entry.end < Date()
-            return QuickPeekEntry(date: entry.begin, configuration: configuration, data: entry, mode: isInClass ? .inClass : .beforeClasses)
+            let mode: QuickPeekMode = entry.isItRightNow() ? .inClass : .beforeClasses
+            return QuickPeekEntry(date: entry.begin, configuration: configuration, data: entry, mode: mode)
         }
         
         if entries.count == 0 {
@@ -42,12 +42,13 @@ struct Provider: IntentTimelineProvider {
             entries.append(QuickPeekEntry(date: .now, configuration: configuration, data: nextActivity, mode: .vacation))
         }
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        //let timeline = Timeline(entries: entries, policy: .after(entries.last?.data?.end ?? .now + 90.seconds))
+        let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
 }
 
-enum QuickPeekMode {
+enum QuickPeekMode: String {
     case beforeClasses, inClass, vacation, placeholder
 }
 
@@ -91,47 +92,49 @@ struct QuickPeekEntryView : View {
     }
 
     var body: some View {
-        switch (entry.mode) {
-        case .vacation:
-            if let vacationTime = entry.timeLeftVacations {
-                VStack(alignment: .leading) {
-                    Text("No classes on the horizon 😎")
-                        .font(.system(size: 14))
-                        .italic()
-                        .opacity(0.8)
-                    Spacer()
-                        .frame(height: 20.0)
-                    Text("\(vacationTime) left")
-                    Text(entry.data!.begin.formatted(date: .abbreviated, time: .omitted))
-                }
-                .padding()
+        if let remaining = entry.timeLeftToEnd {
+            VStack(alignment: .leading) {
+                Text("Remaining time:")
+                    .font(.system(size: 14))
+                Text(remaining)
+                    .font(.system(size: 32, weight: .bold, design: .rounded))
             }
-        case .beforeClasses:
-            if let scheduleEntry = entry.data {
-                VStack(alignment: .leading) {
-                    Text("Next:")
-                        .font(.system(size: 14))
-                    Text(scheduleEntry.code)
-                        .font(.system(size: 40, weight: .bold, design: .rounded))
-                    Text(scheduleEntry.begin.formatted())
-                        .font(.system(size: 12))
-                    Text(scheduleEntry.room)
-                        .font(.system(size: 12))
-                }
-                .padding()
+            .padding()
+        } else if let vacationTime = entry.timeLeftVacations {
+            VStack(alignment: .leading) {
+                Text("No classes on the horizon 😎")
+                    .font(.system(size: 14))
+                    .italic()
+                    .opacity(0.8)
+                Spacer()
+                    .frame(height: 20.0)
+                Text("\(vacationTime) left")
+                Text(entry.data!.begin.formatted(date: .abbreviated, time: .omitted))
             }
-        case .inClass:
-            if let remaining = entry.timeLeftToEnd {
-                VStack(alignment: .leading) {
-                    Text("Remaining time:")
-                        .font(.system(size: 14))
-                    Text(remaining)
-                        .font(.system(size: 32, weight: .bold, design: .rounded))
-                }
-                .padding()
+            .padding()
+        } else if let scheduleEntry = entry.data {
+            VStack(alignment: .leading) {
+                Text("Next:")
+                    .font(.system(size: 14))
+                Text(scheduleEntry.code)
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                Text(scheduleEntry.begin.formatted())
+                    .font(.system(size: 12))
+                Text(scheduleEntry.room)
+                    .font(.system(size: 12))
             }
-        default:
+            .padding()
+        } else {
             PlaceholerView()
+        }
+        
+        if entry.configuration.develStamp == 1 {
+            Text("\(entry.mode.rawValue) \(Date.now.formatted())")
+                .font(.system(size: 5, design: .monospaced))
+            if let data = entry.data {
+                Text("rn: \(data.isItRightNow().description) future: \(data.end.isInFuture.description)")
+                    .font(.system(size: 5, design: .monospaced))
+            }
         }
     }
 }
