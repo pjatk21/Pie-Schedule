@@ -14,10 +14,16 @@ struct EntryPreviewRow: View {
     
     var body: some View {
         HStack {
+            if (entry.isItRightNow()){
+                Rectangle()
+                    .foregroundColor(.red)
+                    .frame(maxWidth: 2, maxHeight: .infinity)
+                    .opacity(0.6)
+            }
             VStack(alignment: .leading) {
                 Text(entry.code)
                     .font(.system(size: 24, weight: .bold, design: .rounded))
-                Text(entry.begin.formatted(date: .omitted, time: .shortened) + " - " + entry.end.formatted(date: .omitted, time: .shortened))
+                Text((entry.begin..<entry.end).formatted())
             }
             Spacer(minLength: 30)
             VStack(alignment: .trailing) {
@@ -36,6 +42,7 @@ struct EntryPreviewRow: View {
                 }
             }
         }
+        .opacity(entry.end <= .now ? 0.3 : 1)
     }
 }
 

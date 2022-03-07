@@ -120,7 +120,9 @@ struct QuickPeekEntryView : View {
                     .font(.system(size: 40, weight: .bold, design: .rounded))
                 Text(scheduleEntry.begin.formatted())
                     .font(.system(size: 12))
-                Text(scheduleEntry.room)
+                Text("Starts in \(scheduleEntry.startsInFormatted())")
+                    .font(.system(size: 12))
+                Text("W sali \(scheduleEntry.room)")
                     .font(.system(size: 12))
             }
             .padding()
@@ -174,5 +176,11 @@ struct QuickPeek_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+    }
+}
+
+extension ScheduleEntry {
+    func startsInFormatted(_ when: Date = .now) -> String {
+        (.now..<self.begin).formatted(.components(style: .abbreviated, fields: [.hour, .minute]))
     }
 }
