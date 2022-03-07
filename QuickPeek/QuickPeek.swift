@@ -117,11 +117,15 @@ struct QuickPeekEntryView : View {
                 Text("Next:")
                     .font(.system(size: 14))
                 Text(scheduleEntry.code)
-                    .font(.system(size: 40, weight: .bold, design: .rounded))
-                Text(scheduleEntry.begin.formatted())
-                    .font(.system(size: 12))
-                Text("Starts in \(scheduleEntry.startsInFormatted())")
-                    .font(.system(size: 12))
+                    .font(.system(size: 36, weight: .bold, design: .rounded))
+                if entry.configuration.dateControl == .timeLeft {
+                    Text("Starts in \(scheduleEntry.startsInFormatted())")
+                        .font(.system(size: 12))
+                } else {
+                    Text(scheduleEntry.begin.formatted())
+                        .font(.system(size: 11))
+                }
+                
                 Text("W sali \(scheduleEntry.room)")
                     .font(.system(size: 12))
             }
@@ -166,6 +170,12 @@ struct QuickPeek: Widget {
     }
 }
 
+extension ScheduleEntry {
+    func startsInFormatted(_ when: Date = .now) -> String {
+        (.now..<self.begin).formatted(.components(style: .condensedAbbreviated, fields: [.hour, .minute]))
+    }
+}
+
 struct QuickPeek_Previews: PreviewProvider {
     static var previews: some View {
         QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent(), data: ScheduleEntry.loremIpsum, mode: .beforeClasses))
@@ -176,11 +186,5 @@ struct QuickPeek_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         QuickPeekEntryView(entry: QuickPeekEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
-    }
-}
-
-extension ScheduleEntry {
-    func startsInFormatted(_ when: Date = .now) -> String {
-        (.now..<self.begin).formatted(.components(style: .abbreviated, fields: [.hour, .minute]))
     }
 }
