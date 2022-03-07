@@ -278,6 +278,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6142E73827C404B3008C357C /* Build configuration list for PBXNativeTarget "Pie Schedule" */;
 			buildPhases = (
+				61131FEB27D61584002F66E9 /* Update buildinfo.json */,
 				6142E72627C404B2008C357C /* Sources */,
 				6142E72727C404B2008C357C /* Frameworks */,
 				6142E72827C404B2008C357C /* Resources */,
@@ -366,6 +367,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61131FEB27D61584002F66E9 /* Update buildinfo.json */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update buildinfo.json";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "echo \\{\"branch\": \\\"$(git rev-parse --abbrev-ref HEAD)\\\"\\, \"commit\": \\\"$(git rev-parse --short HEAD)\\\"} > buildinfo.json\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		611009C427CE541E008894D7 /* Sources */ = {
