@@ -8,6 +8,11 @@
 import SwiftUI
 import RealmSwift
 
+struct BuildInfo: Codable {
+    let branch: String
+    let commit: String
+}
+
 struct Settings: View {
     @ObservedResults(ScheduleGroup.self) var groups: Results<ScheduleGroup>
     @Environment(\.realm) private var realm: Realm
@@ -57,6 +62,7 @@ struct Settings: View {
                 
                 Section("About") {
                     Text("Version: \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)")
+                    Text("Git: \(build.branch) \(build.commit)")
                     Button("Github repo") {
                         UIApplication.shared.open(URL(string: "https://github.com/pjatk21/Pie-Schedule")!)
                     }
@@ -108,6 +114,23 @@ struct Settings: View {
         }
         return warnings
     }
+    
+    let build: BuildInfo = {
+        if let buildInfoUrl = Bundle.main.url(forResource: "buildinfo", withExtension: "json") {
+            if let data = try? Data(contentsOf: buildInfoUrl) {
+                do {
+                    print(String(data: data, encoding: .utf8)!)
+                    return try JSONDecoder().decode(BuildInfo.self, from: data)
+                } catch {
+                    print(error)
+                    return nil
+                }
+                
+            }
+        }
+        
+        return nil
+    }() ?? BuildInfo(branch: "unknown", commit: "unknown")
 }
 
 struct SettingsGroupAdd: View {

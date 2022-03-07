@@ -23,6 +23,7 @@
 		611009E427CE5480008894D7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 611009E327CE5480008894D7 /* RealmSwift */; };
 		611009E627CE5480008894D7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 611009E527CE5480008894D7 /* SwiftDate */; };
 		611009E827CE5480008894D7 /* SwiftDateStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 611009E727CE5480008894D7 /* SwiftDateStatic */; };
+		61131FED27D615F7002F66E9 /* buildinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 61131FEC27D615F7002F66E9 /* buildinfo.json */; };
 		611B6D5D27C4D2F600A143AB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5C27C4D2F600A143AB /* Settings.swift */; };
 		611B6D5F27C4D32200A143AB /* EntryPreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */; };
 		61290B7127CD79B3001F1CFC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 61290B7027CD79B3001F1CFC /* Realm */; };
@@ -89,6 +90,7 @@
 		611009D127CE541F008894D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		611009D327CE541F008894D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611009E927CE5BAB008894D7 /* QuickPeekExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickPeekExtension.entitlements; sourceTree = "<group>"; };
+		61131FEC27D615F7002F66E9 /* buildinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = buildinfo.json; sourceTree = "<group>"; };
 		611B6D5C27C4D2F600A143AB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		611B6D5E27C4D32200A143AB /* EntryPreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPreviewRow.swift; sourceTree = "<group>"; };
 		61290B7427CD7B23001F1CFC /* DateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateControl.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		6142E72127C404B2008C357C = {
 			isa = PBXGroup;
 			children = (
+				61131FEC27D615F7002F66E9 /* buildinfo.json */,
 				611009E927CE5BAB008894D7 /* QuickPeekExtension.entitlements */,
 				61A7391A27C44E4800B1D4F5 /* README.md */,
 				6142E73B27C404EF008C357C /* Packages */,
@@ -278,9 +281,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6142E73827C404B3008C357C /* Build configuration list for PBXNativeTarget "Pie Schedule" */;
 			buildPhases = (
-				61131FEB27D61584002F66E9 /* Update buildinfo.json */,
 				6142E72627C404B2008C357C /* Sources */,
 				6142E72727C404B2008C357C /* Frameworks */,
+				61131FEB27D61584002F66E9 /* Update buildinfo.json */,
 				6142E72827C404B2008C357C /* Resources */,
 				61A7391527C4479200B1D4F5 /* Embed Frameworks */,
 				611009D927CE541F008894D7 /* Embed App Extensions */,
@@ -360,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61131FED27D615F7002F66E9 /* buildinfo.json in Resources */,
 				6142E73527C404B3008C357C /* Preview Assets.xcassets in Resources */,
 				619181B527CCEBC100DC265A /* Localizable.strings in Resources */,
 				6142E73227C404B3008C357C /* Assets.xcassets in Resources */,
@@ -385,7 +389,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "echo \\{\"branch\": \\\"$(git rev-parse --abbrev-ref HEAD)\\\"\\, \"commit\": \\\"$(git rev-parse --short HEAD)\\\"} > buildinfo.json\n";
+			shellScript = "echo \\{\\\"branch\\\": \\\"$(git rev-parse --abbrev-ref HEAD)\\\"\\, \\\"commit\\\": \\\"$(git rev-parse --short HEAD)\\\"} > buildinfo.json\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
