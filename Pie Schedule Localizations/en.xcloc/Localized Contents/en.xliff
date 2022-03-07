@@ -72,6 +72,11 @@
         <target>General preferences</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Git: %@ %@" xml:space="preserve">
+        <source>Git: %@ %@</source>
+        <target>Git: %@ %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
         <source>Github repo</source>
         <target>Github repo</target>
@@ -145,6 +150,11 @@
       <trans-unit id="Refresh" xml:space="preserve">
         <source>Refresh</source>
         <target>Refresh</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reload widget timeline" xml:space="preserve">
+        <source>Reload widget timeline</source>
+        <target>Reload widget timeline</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
@@ -241,6 +251,11 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
+      <trans-unit id="%@ %@" xml:space="preserve">
+        <source>%@ %@</source>
+        <target>%@ %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ left" xml:space="preserve">
         <source>%@ left</source>
         <target>%@ left</target>
@@ -269,6 +284,21 @@
       <trans-unit id="Remaining time:" xml:space="preserve">
         <source>Remaining time:</source>
         <target>Remaining time:</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Starts in %@" xml:space="preserve">
+        <source>Starts in %@</source>
+        <target>Starts in %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="W sali %@" xml:space="preserve">
+        <source>W sali %@</source>
+        <target>In room %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="rn: %@ future: %@" xml:space="preserve">
+        <source>rn: %@ future: %@</source>
+        <target>rn: %@ future: %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="🤔" xml:space="preserve">

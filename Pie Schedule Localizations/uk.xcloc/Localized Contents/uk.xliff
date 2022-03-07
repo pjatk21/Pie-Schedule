@@ -63,6 +63,10 @@
         <source>General preferences</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Git: %@ %@" xml:space="preserve">
+        <source>Git: %@ %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Github repo" xml:space="preserve">
         <source>Github repo</source>
         <target>Репозиторій Github</target>
@@ -123,6 +127,10 @@
       </trans-unit>
       <trans-unit id="Refresh" xml:space="preserve">
         <source>Refresh</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reload widget timeline" xml:space="preserve">
+        <source>Reload widget timeline</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Schedule" xml:space="preserve">
@@ -206,6 +214,10 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E5104i"/>
     </header>
     <body>
+      <trans-unit id="%@ %@" xml:space="preserve">
+        <source>%@ %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ left" xml:space="preserve">
         <source>%@ left</source>
         <note>No comment provided by engineer.</note>
@@ -228,6 +240,18 @@
       </trans-unit>
       <trans-unit id="Remaining time:" xml:space="preserve">
         <source>Remaining time:</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Starts in %@" xml:space="preserve">
+        <source>Starts in %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="W sali %@" xml:space="preserve">
+        <source>W sali %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="rn: %@ future: %@" xml:space="preserve">
+        <source>rn: %@ future: %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="🤔" xml:space="preserve">

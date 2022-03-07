@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+"%@ %@" = "%@ %@";
+
+/* No comment provided by engineer. */
 "%@ left" = "%@ left";
 
 /* No comment provided by engineer. */
@@ -18,4 +21,13 @@
 
 /* No comment provided by engineer. */
 "Remaining time:" = "Remaining time:";
+
+/* No comment provided by engineer. */
+"rn: %@ future: %@" = "rn: %@ future: %@";
+
+/* No comment provided by engineer. */
+"Starts in %@" = "Starts in %@";
+
+/* No comment provided by engineer. */
+"W sali %@" = "W sali %@";
 
